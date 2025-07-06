@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lending</fullName>
+    <active>true</active>
+    <label>Lending</label>
+    <picklistValues>
+        <picklist>Product_Category__c</picklist>
+        <values>
+            <fullName>Lending</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product_Type__c</picklist>
+        <values>
+            <fullName>Contingent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instalment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revolving</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

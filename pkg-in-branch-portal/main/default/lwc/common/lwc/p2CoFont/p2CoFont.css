@@ -1,0 +1,73 @@
+@import 'c/p2CoTheme';
+
+.p-font-masthead-title {
+    font-family: var(--p-font);
+    font-weight: normal;
+    font-size: var(--p-font-size-largest); /* 17px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-red);
+}
+
+.p-font-h1-title {
+    font-family: var(--p-font-semibold);
+    font-weight: normal;
+    font-size: var(--p-font-size-larger); /* 16px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-h2-title {
+    font-family: var(--p-font-semibold);
+    font-weight: normal;
+    font-size: var(--p-font-size-large); /* 14px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-h3-title {
+    font-family: var(--p-font-semibold);
+    font-weight: normal;
+    font-size: var(--p-font-size); /* 12px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-body-large {
+    font-family: var(--p-font);
+    font-weight: normal;
+    font-size: var(--p-font-size-large); /* 14px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-body-regular {
+    font-family: var(--p-font);
+    font-weight: normal;
+    font-size: var(--p-font-size); /* 12px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-body-secondary {
+    font-family: var(--p-font);
+    font-weight: normal;
+    font-size: var(--p-font-size-small); /* 10px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-grey-dark);
+}
+
+.p-font-action-button-link {
+    font-family: var(--p-font);
+    font-weight: normal;
+    font-size: var(--p-font-size); /* 12px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-blue-dark);
+}
+
+.p-font-button-text {
+    font-family: var(--p-font-semibold);
+    font-weight: normal;
+    font-size: var(--p-font-size-large); /* 14px */
+    line-height: var(--p-font-line-height); /* 20px */
+    color: var(--p-color-blue-dark);
+}

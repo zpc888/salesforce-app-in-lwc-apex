@@ -1,0 +1,31 @@
+{
+    "records": [
+      {
+        "attributes": {
+          "type": "Account",
+          "referenceId": "AccountRef1"
+        },
+        "Name": "Acme Corporation",
+        "Industry": "Technology",
+        "Phone": "555-123-4567"
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "referenceId": "AccountRef2"
+        },
+        "Name": "Global Widgets",
+        "Industry": "Manufacturing",
+        "Phone": "555-987-6543"
+      },
+      {
+        "attributes": {
+          "type": "Account",
+          "referenceId": "AccountRef3"
+        },
+        "Name": "Acne Corporation",
+        "Industry": "Technology",
+        "Phone": "555-123-4568"
+      }
+    ]
+  }

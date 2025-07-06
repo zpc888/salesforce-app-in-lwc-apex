@@ -1,0 +1,62 @@
+<template>
+<section class="poc-main-body">
+    <lightning-card>
+        <h2 slot="title">
+            With track
+        </h2>
+        <div class="poc-simple-prop poc-prop">
+            <label for="simple-prop-val-1">Simple Property</label>
+            <div id="simple-prop-val-1">{string1}</div>
+        </div>
+        <div class="poc-obj-prop poc-prop">
+            <label for="obj-prop-val-1-1">First Name</label>
+            <div id="obj-prop-val-1-1">{object1.firstName}</div>
+        </div>
+        <div class="poc-obj-prop poc-prop">
+            <label for="obj-prop-val-1-2">Last Name</label>
+            <div id="obj-prop-val-1-2">{object1.lastName}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card>
+        <h2 slot="title">
+            Without track
+        </h2>
+        <div class="poc-simple-prop poc-prop">
+            <label for="simple-prop-val-2">Simple Property</label>
+            <div id="simple-prop-val-2">{string2}</div>
+        </div>
+        <div class="poc-obj-prop poc-prop">
+            <label for="obj-prop-val-2-1">First Name</label>
+            <div id="obj-prop-val-2-1">{object2.firstName}</div>
+        </div>
+        <div class="poc-obj-prop poc-prop">
+            <label for="obj-prop-val-2-2">Last Name</label>
+            <div id="obj-prop-val-2-2">{object2.lastName}</div>
+        </div>
+    </lightning-card>
+
+    <section class="poc-btns">
+        <lightning-button label="All Object Value Update" onclick={handleAllObjectValueUpdated}></lightning-button>
+        <lightning-button label="All Object Reference Update" onclick={handleAllObjectReferenceUpdated}></lightning-button>
+    </section>
+    <section class="poc-btns">
+        <lightning-button label="No Track Object Value Update" onclick={handleNoTrackObjectValueUpdated}></lightning-button>
+        <lightning-button label="No Track Object Reference Update" onclick={handleNoTrackObjectReferenceUpdated}></lightning-button>
+    </section>
+    <section class="poc-btns">
+        <lightning-button label="Track Object Value Update" onclick={handleTrackObjectValueUpdated}></lightning-button>
+        <lightning-button label="Track Object Reference Update" onclick={handleTrackObjectReferenceUpdated}></lightning-button>
+    </section>
+    <section class="poc-btns">
+        <lightning-button label="Mixed Track and No Track Object Value Update" onclick={handleMixedTrackNoTrackObjectValueUpdated}></lightning-button>
+        <lightning-button label="Mixed Track and No Track Object / No Track Simple Value Update" onclick={handleMixedNoTrackObjectSimpleValueUpdated}></lightning-button>
+        <lightning-button label="Mixed Track and No Track Object / Track Simple Value Update" onclick={handleMixedNoTrackObjectTrackSimpleValueUpdated}></lightning-button>
+    </section>
+    <section class="poc-btns">
+        <lightning-button label="Reset" onclick={handleReset}></lightning-button>
+    </section>
+
+</section>
+
+</template>

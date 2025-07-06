@@ -1,0 +1,64 @@
+<template>
+    <section class="poc-container">
+        <details>
+            <summary>ComboBox with Initial Value</summary>
+            <div>
+                <lightning-combobox
+                    name="progress"
+                    label="Status"
+                    value={initComboValue}
+                    options={options}
+                    placeholder="Select Progress"
+                    onchange={handleChangeWithInitComboValue}>
+                </lightning-combobox>
+                <div>Selected value is: {initComboValue}</div>
+            </div>
+        </details>
+
+        <details>
+            <summary>ComboBox without Initial Value</summary>
+            <div>
+                <lightning-combobox
+                    name="progress"
+                    label="Status"
+                    value={noInitComboValue}
+                    options={options}
+                    placeholder="Select Progress"
+                    onchange={handleChangeWithoutInitComboValue}>
+                </lightning-combobox>
+                <div>Selected value is: {noInitComboValue}</div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Select with Initial Value</summary>
+            <div>
+                <lightning-select
+                    name="progress"
+                    label="Status"
+                    value={initSelectValue}
+                    options={options}
+                    placeholder="Select Progress"
+                    onchange={handleChangeWithInitSelectValue}>
+                </lightning-select>
+                <div>Selected value is: {initSelectValue}</div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Select without Initial Value</summary>
+            <div>
+                <lightning-select
+                    name="progress"
+                    label="Status"
+                    value={noInitSelectValue}
+                    options={options}
+                    placeholder="Select Progress"
+                    onchange={handleChangeWithoutInitSelectValue}>
+                </lightning-select>
+                <div>Selected value is: {noInitSelectValue}</div>
+            </div>
+        </details>
+
+    </section>   
+</template>

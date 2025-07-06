@@ -1,0 +1,9 @@
+@import 'c/pocCommonStyle';
+
+select {
+    padding: 2px 2px 2px 2px;
+    border: none; 
+    background-image: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png");
+    background-position: right center; /*Positioning*/
+    background-repeat: no-repeat; /*Prevent showing multiple background images*/
+}

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Account Search - Wire Property with Apex">
+        <div class="slds-var-p-around_medium">
+            <lightning-input type="search" label="Account Name" onchange={handleAccountNameChange} >
+            </lightning-input>
+
+            <template if:true={accounts.data}>
+                <lightning-datatable data={accounts.data} 
+                    key-field="Id" 
+                    columns={columns} 
+                    hide-checkbox-column="true" 
+                ></lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+</template>

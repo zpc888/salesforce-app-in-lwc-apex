@@ -1,0 +1,26 @@
+.poc-container {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.325rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    color: lightgreen;
+}
+
+details {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border: 1px solid darkgrey;
+    border-radius: 0.325rem;
+    box-shadow: inset 0 0 0 1px #ccc;
+}

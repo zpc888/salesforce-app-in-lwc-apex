@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none">
+<symbol id="arrow_right" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M20.6979 15L10.6979 25L9.30273 23.6048L17.9075 15L9.30273 6.3952L10.6979 5L20.6979 15Z" fill="#7C7C7C"/></symbol>
+<symbol id="arrow_left" viewBox="0 0 31 30" xmlns="http://www.w3.org/2000/svg"><path d="M9.86408 15.0001L19.8641 5.00012L21.2593 6.39532L12.6545 15.0001L21.2593 23.6049L19.8641 25.0001L9.86408 15.0001Z" fill="#7C7C7C"/></symbol>
+<symbol id="arrow_down" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 20.6977L5 10.6977L6.3952 9.30249L15 17.9073L23.6048 9.30249L25 10.6977L15 20.6977Z" fill="#7C7C7C"/></symbol>
+<symbol id="arrow_up" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path d="M15 9.30243L25 19.3024L23.6048 20.6976L15 12.0928L6.3952 20.6976L5 19.3024L15 9.30243Z" fill="#7C7C7C"/></symbol>
+</svg>

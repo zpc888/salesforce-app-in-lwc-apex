@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Regular';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Light';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Lighter';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-ExtraLight.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Semibold';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Semibold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Bold';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SourceSansPro-Bolder';
+  src: url('/resource/SourceSansProFontFamily/SourceSansPro-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:host {
+    --p-font: 'SourceSansPro';
+    --p-font-light: 'SourceSansPro-Light';
+    --p-font-lighter: 'SourceSansPro-Lighter';
+    --p-font-semibold: 'SourceSansPro-Semibold';
+    --p-font-bold: 'SourceSansPro-Bold';
+    --p-font-bolder: 'SourceSansPro-Bolder';
+
+    --p-font-size: 0.75rem;           /* 12px */
+    --p-font-size-large: 0.875rem;    /* 14px */
+    --p-font-size-larger: 1rem;       /* 16px */
+    --p-font-size-largest: 1.0625rem; /* 17px */
+    --p-font-size-small: 0.625rem;    /* 10px */
+    --p-font-size-smaller: 0.5rem;    /* 8px */
+
+    --p-font-line-height: 1.25rem;    /* 20px */
+
+    --p-color-grey-dark: #3A3A3A;
+    --p-color-grey-heavy: #7C7C7C;
+    --p-color-grey-mid: #AEAEB2;
+    --p-color-grey-light: #EFEFEF;
+
+    --p-color-white: #FFFFFF;
+    --p-color-black: #000000;
+
+    --p-color-red-dark: #B63546;
+    --p-color-red: #D83A52;
+    --p-color-red-light: #FFD5DC;
+
+    --p-color-orange-dark: #FF642E;
+    --p-color-orange: #FD8D3D;
+    --p-color-orange-light: #FFE2C9;
+
+    --p-color-yellow-dark: #CF9715;
+    --p-color-yellow: #FFCB00;
+    --p-color-yellow-light: #FFF4C3;
+
+    --p-color-green-dark: #007038;
+    --p-color-green: #258750;
+    --p-color-green-light: #C7E8D6;
+
+    --p-color-teal-dark: #088E8B;
+    --p-color-teal: #0ABAB5;
+    --p-color-teal-light: #C7EEEC;
+
+    --p-color-blue-dark: #006089;
+    --p-color-blue: #0077F3;
+    --p-color-blue-light: #CEE5FD;
+
+    --p-color-purple-dark: #784BD1;
+    --p-color-purple: #A25DDC;
+    --p-color-purple-light: #D3C7EE;
+
+    --p-color-pink-dark: #F65F7C;
+    --p-color-pink: #FFADB8;
+    --p-color-pink-light: #FFD8ED;
+
+    --p-color-brown-dark: #7F5347;
+    --p-color-brown: #BD816E;
+    --p-color-brown-light: #EDD1C8;
+
+    --p-panel-dark-color: #E6DFE0;
+    --p-panel-light-color: #F3EFF0;
+    
+    --p-border-light-color: #DCD6D7;
+    --p-section-light-color: #F5F5F5;
+
+
+    /* themes */
+    --p-pg-bg-color: var(--p-color-white);
+    --p-pg-head-bg-color: var(--p-color-grey-dark);
+    --p-pg-content-left-nav-bg-color: var(--p-panel-dark-color);
+    --p-pg-content-left-menu-bg-color: var(--p-panel-light-color);
+    --p-pg-content-mid-bg-color: var(--p-color-white);
+    --p-pg-content-right-bg-color: var(--p-color-white);
+    --p-pg-content-footer-action-color: var(--p-panel-light-color);
+
+}

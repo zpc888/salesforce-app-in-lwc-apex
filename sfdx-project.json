@@ -1,0 +1,49 @@
+{
+  "packageDirectories": [
+    {
+      "package": "pkg-common",
+      "path": "pkg-common",
+      "default": true
+    },
+    {
+      "package": "pkg-digital-portal",
+      "path": "pkg-digital-portal",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "pkg-common"
+        }
+      ]
+    },
+    {
+      "package": "pkg-in-branch-portal",
+      "path": "pkg-in-branch-portal",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "pkg-common"
+        }
+      ]
+    },
+    {
+      "package": "pkg-sandbox",
+      "path": "pkg-sandbox",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "pkg-common"
+        },
+        {
+          "package": "pkg-digital-portal"
+        },
+        {
+          "package": "pkg-in-branch-portal"
+        }
+      ]
+    }
+  ],
+  "name": "prot-bank-sf",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "62.0"
+}
