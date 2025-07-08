@@ -1,0 +1,12 @@
+<template>
+   <section class="poc-showcase-container">
+   <h1 class="p-font-h1-title">Font Show Time</h1> 
+    <section class="poc-showcase">
+        <template for:each={items} for:item="item">
+            <div key={item.id} class={item.className}>
+                    {item.name}
+            </div>
+        </template>
+    </section>
+    </section>
+</template>

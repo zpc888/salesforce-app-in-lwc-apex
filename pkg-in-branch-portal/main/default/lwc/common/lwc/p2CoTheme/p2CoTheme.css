@@ -102,11 +102,11 @@
     --p-color-brown: #BD816E;
     --p-color-brown-light: #EDD1C8;
 
-    --p-panel-dark-color: #E6DFE0;
-    --p-panel-light-color: #F3EFF0;
+    --p-color-panel-dark: #E6DFE0;
+    --p-color-panel-light: #F3EFF0;
     
-    --p-border-light-color: #DCD6D7;
-    --p-section-light-color: #F5F5F5;
+    --p-color-border-light: #DCD6D7;
+    --p-color-section-light: #F5F5F5;
 
 
     /* themes */

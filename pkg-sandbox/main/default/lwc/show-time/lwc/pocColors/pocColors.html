@@ -1,0 +1,18 @@
+<template>
+  <section class="poc-showcase-container">
+    <h1 class="p-font-h1-title">Color Show Time</h1> 
+    <section class="poc-showcase">
+        <template for:each={items} for:item="item">
+            <div key={item.id} class='poc-showcase-group'>
+                <h2 class="p-font-h2-title">{item.group}</h2> 
+                <template for:each={item.colors} for:item="color">
+                    <div key={color.id} class='poc-color'>
+                        <div class="poc-color-circle" style={color.style}></div>
+                        <div class="p-font-body-regular">{color.label}</div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </section>
+  </section>
+</template>

@@ -1,0 +1,22 @@
+@import 'c/pocShowTimeStyle';
+
+.poc-showcase {
+    align-items: flex-start;
+}
+
+.poc-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.poc-icon-svg {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

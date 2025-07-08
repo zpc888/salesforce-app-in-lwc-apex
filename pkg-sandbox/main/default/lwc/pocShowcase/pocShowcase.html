@@ -1,0 +1,14 @@
+<template>
+   <section class="poc-showcase-container">
+   <h1 class="p-font-h1-title">Showcase</h1> 
+    <section class="poc-showcase">
+        <template for:each={items} for:item="item">
+            <div key={item.name} class="poc-showcase-item p-font-body-regular">
+                <button data-item-comp={item.comp} onclick={handleShowItemClick}>
+                    {item.name}
+                </button>
+            </div>
+        </template>
+    </section>
+    </section>
+</template>

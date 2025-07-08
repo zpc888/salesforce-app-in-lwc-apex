@@ -1,0 +1,27 @@
+<template>
+  <section class="poc-showcase-container">
+    <h1 class="p-font-h1-title">Icon Show Time</h1> 
+    <section class="poc-showcase">
+        <template for:each={items} for:item="item">
+            <div key={item.group} class='poc-showcase-group'>
+                <h2 class="p-font-h2-title">{item.group}</h2> 
+                <template for:each={item.icons} for:item="icon">
+                    <div key={icon.id} class='poc-icon'>
+                        <div class="poc-icon-svg">
+                            <template if:true={icon.sprite}>
+                            <svg aria-hidden="true">
+                                <use xlink:href={icon.imgUrl}></use>
+                            </svg>
+                        </template>
+                        <template if:false={icon.sprite}>
+                            <img src={icon.imgUrl} alt={icon.name} />
+                        </template>
+                        </div>
+                        <div class="p-font-body-regular">{icon.name}</div>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </section>
+  </section>
+</template>

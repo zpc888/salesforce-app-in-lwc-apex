@@ -1,0 +1,5 @@
+@import 'c/pocShowTimeStyle';
+
+.poc-showcase {
+    flex-direction: row;
+}
