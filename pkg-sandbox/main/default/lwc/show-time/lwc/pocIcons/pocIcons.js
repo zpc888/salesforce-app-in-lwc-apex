@@ -17,6 +17,15 @@ export default class PocIcons extends LightningElement {
   ];
   imageItems = [
     {
+      group: "chevron",
+      icons: [
+        { id: 1, name: "left" },
+        { id: 2, name: "right" },
+        { id: 3, name: "up" },
+        { id: 4, name: "down" }
+      ]
+    },
+    {
       group: "action",
       icons: [
         { id: 1, name: "add-new" },
@@ -79,7 +88,11 @@ export default class PocIcons extends LightningElement {
         { id: 40, name: "error" },
         { id: 41, name: "info" },
         { id: 42, name: "ok" },
-        { id: 43, name: "warning" }
+        { id: 43, name: "warning" },
+        { id: 44, name: "error-big" },
+        { id: 45, name: "info-big" },
+        { id: 46, name: "ok-big" },
+        { id: 47, name: "warning-big" }
       ]
     },
     {
@@ -154,6 +167,13 @@ export default class PocIcons extends LightningElement {
         { id: 90, name: "open-left" },
         { id: 91, name: "open-right-selected" },
         { id: 92, name: "open-right" }
+      ]
+    },
+    {
+      group: "progressbar",
+      icons: [
+        { id: 85, name: "current-step" },
+        { id: 86, name: "next-step" }
       ]
     }
   ];
