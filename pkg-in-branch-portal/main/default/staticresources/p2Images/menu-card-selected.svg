@@ -1,25 +1,5 @@
-<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.5">
-<g clip-path="url(#clip0_8_7686)">
-<rect width="60" height="60" rx="13.3594" fill="#EFEFEF"/>
-<path d="M0 41.1914H60" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M0 30H60" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M0 18.8086H60" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M41.1914 60V0" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M30 60V0" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M18.8086 60V0" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M60 60L0 0" stroke="#0077F3" stroke-width="0.5"/>
-<path d="M0 60L60 0" stroke="#0077F3" stroke-width="0.5"/>
-<rect x="3.92578" y="3.92578" width="52.1484" height="52.1484" stroke="#0077F3" stroke-width="0.5"/>
-<circle cx="30" cy="30" r="11.1914" stroke="#0077F3" stroke-width="0.5"/>
-<circle cx="30" cy="30" r="15.7617" stroke="#0077F3" stroke-width="0.5"/>
-<circle cx="30" cy="30" r="26.0742" stroke="#0077F3" stroke-width="0.5"/>
-</g>
-<rect x="0.25" y="0.25" width="59.5" height="59.5" rx="13.1094" stroke="#D83A52" stroke-width="0.5"/>
-</g>
-<defs>
-<clipPath id="clip0_8_7686">
-<rect width="60" height="60" rx="13.3594" fill="white"/>
-</clipPath>
-</defs>
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M27.5 10.8333H2.5V12.9166H27.5V10.8333Z" fill="#7C7C7C"/>
+<path d="M2.5 13.9583V20.7291C2.5 22.1645 3.66875 23.3333 5.10415 23.3333H24.8958C26.3312 23.3333 27.5 22.1645 27.5 20.7291V13.9583H2.5ZM6.14585 17.0833H10.3125C10.6 17.0833 10.8334 17.3166 10.8334 17.6041C10.8334 17.8916 10.6 18.1249 10.3125 18.1249H6.14585C5.85835 18.1249 5.625 17.8916 5.625 17.6041C5.625 17.3166 5.85835 17.0833 6.14585 17.0833ZM13.4375 20.2083H6.14585C5.85835 20.2083 5.625 19.9749 5.625 19.6874C5.625 19.3999 5.85835 19.1666 6.14585 19.1666H13.4375C13.725 19.1666 13.9584 19.3999 13.9584 19.6874C13.9584 19.9749 13.726 20.2083 13.4375 20.2083Z" fill="#7C7C7C"/>
+<path d="M24.8958 6.66675H5.10415C3.66875 6.66675 2.5 7.8355 2.5 9.27095V9.7918H27.5V9.27095C27.5 7.8355 26.3312 6.66675 24.8958 6.66675Z" fill="#7C7C7C"/>
 </svg>
