@@ -72,7 +72,6 @@ li .p-font-masthead-title {
     border-radius: 50%;
 }
 
-
 .p-masthead-user-photo > span {
     width: 2.25rem; /* 36px */
     height: 2.25rem; /* 36px */
@@ -86,7 +85,12 @@ li .p-vertical-divider {
     height: 1.25rem; /* 20px */
     border-left: solid 0.0625rem var(--p-color-grey-dark); /* 1px */
 }
-
+/* 
 div[role="button"] {
     cursor: pointer;
+} */
+
+li button {
+    background: none;
+    border: none;
 }

@@ -12,14 +12,12 @@
             <ul>
                 <li>
                     <div class="p-masthead-action">
-                        <div role="button" 
-                            tabindex="0"
+                        <button
                             class="p-c-both-center p-font-masthead-title"
                             onclick={handleLanguageSwitch}
-                            onkeyup={handleLanguageKeyUp}
                         >
                             {i18n.switchLanguageButton}
-                        </div>
+                    </button>
                     </div>
                 </li>
                 <li>
@@ -50,11 +48,9 @@
                     </div>
                 </li>
                 <li>
-                    <div role="button" 
-                        tabindex="0"
+                    <button
                         class="p-masthead-action"
                         onclick={handleAppSwitch}
-                        onkeyup={handleAppKeyUp}
                     >
                         <span class="p-c-both-center">
                             <img src={switchAppIconUrl} alt="" />
@@ -62,7 +58,7 @@
                         <span class="p-c-both-center p-font-masthead-title">
                             {i18n.switchAppButton}
                         </span>
-                    </div>
+                    </button>
                 </li>
             </ul>
         </section>
