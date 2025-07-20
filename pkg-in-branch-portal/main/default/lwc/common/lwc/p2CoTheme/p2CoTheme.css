@@ -64,6 +64,7 @@
     --p-color-grey-light: #EFEFEF;
 
     --p-color-white: #FFFFFF;
+    --p-color-white-80: rgba(255, 255, 255, 0.8);
     --p-color-black: #000000;
 
     --p-color-red-dark: #B63546;

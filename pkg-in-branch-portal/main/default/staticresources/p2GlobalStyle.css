@@ -1,0 +1,23 @@
+/* hide saelsforce banner and footer (utility) */
+#oneHeader {
+    display: none;
+    height: 0;
+}
+
+.navexConsoleTabset > div.tabsetHeader
+, div.oneUtilityBarContainer.oneUtilityBar
+, .slds-text-body_regular.oneSystemMessage
+, .slds-global-header .slds-global-header__item
+, .slds-global-header .slds-combobox-group
+{
+    display: none;
+    height: 0;
+}
+
+.navexStandardManager > .oneAppNavContainer
+, .slds-global-header 
+{
+    display: none;
+    height: 0;
+    position: relative;
+}

@@ -2,3 +2,12 @@
 
 @import 'c/p2CoFont';
 
+/* p-c- means common styles */
+
+.p-c-both-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

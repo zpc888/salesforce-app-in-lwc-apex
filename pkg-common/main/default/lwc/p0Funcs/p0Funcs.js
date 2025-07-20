@@ -49,12 +49,12 @@ export function isFalse(v) {
   return !isTrue(v);
 }
 
-export function objectMerge(target, source) {
+export function deepMerge(target, source) {
   const ret = { ...target };
   for (const key in source) {
     if (key in target) {
       if (target[key] instanceof Object && source[key] instanceof Object) {
-        ret[key] = objectMerge(target[key], source[key]);
+        ret[key] = deepMerge(target[key], source[key]);
       }
     } else {
       ret[key] = source[key];

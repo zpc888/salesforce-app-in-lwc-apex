@@ -19,6 +19,7 @@ export default class P2CoMainLayout extends mix(LightningElement).with(
   isLeftMenuExpanded = true;
   isRightPanelExpanded = true;
 
+  @api userId = null;
   @api userFirstName = null;
   @api userLastName = null;
   @api userName = "Unknown";
@@ -36,8 +37,8 @@ export default class P2CoMainLayout extends mix(LightningElement).with(
   #widowWidth = window.innerWidth;
   #resizeHandler = null;
 
-  switchAppImageUrl = `${IMAGES_URL}/switch-app.svg`;
-  logoImageUrl = `${IMAGES_URL}/logo.svg`;
+  switchAppIconUrl = `${IMAGES_URL}/action-exit.svg`;
+  logoUrl = `${IMAGES_URL}/placeholder-50.svg`;
 
   get i18n() {
     return this.isFrench() ? this.enrichedFr : en;
@@ -108,13 +109,25 @@ export default class P2CoMainLayout extends mix(LightningElement).with(
     }
   }
 
-  handleLanguageChange() {
+  handleLanguageSwitch() {
     this.dispatchEvent(new CustomEvent("languagechanged"));
   }
 
   handleLanguageKeyUp(event) {
     if (event.key === "Enter" || event.key === " ") {
-      this.handleLanguageChange();
+      this.handleLanguageSwitch();
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
+  handleAppSwitch() {
+    this.dispatchEvent(new CustomEvent("appchanged"));
+  }
+
+  handleAppKeyUp(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      this.handleAppSwitch();
       event.preventDefault();
       event.stopPropagation();
     }

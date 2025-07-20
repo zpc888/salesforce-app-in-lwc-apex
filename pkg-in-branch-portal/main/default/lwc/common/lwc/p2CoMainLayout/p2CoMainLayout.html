@@ -1,3 +1,74 @@
 <template>
-    
+   <div class="p-main-layout">
+    <section class="p-masthead" role="banner">
+        <section class="p-masthead-brand">
+            <div class="p-c-both-center">
+                <img width="50px" height="50px" 
+                    src={logoUrl} alt={i18n.logoAlt} />
+            </div>
+            <h1 class="p-masthead-brand-title-text">{i18n.projectName}</h1>
+        </section>
+        <section class="p-c-both-center">
+            <ul>
+                <li>
+                    <div class="p-masthead-action">
+                        <div role="button" 
+                            tabindex="0"
+                            class="p-c-both-center p-font-masthead-title"
+                            onclick={handleLanguageSwitch}
+                            onkeyup={handleLanguageKeyUp}
+                        >
+                            {i18n.switchLanguageButton}
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="p-masthead-action">
+                        <span class="p-vertical-divider"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="p-masthead-action">
+                        <div class="p-photo-container p-masthead-user-photo">
+                            <template lwc:if={hasUserPhoto}>
+                                <img src={userPhotoUrl} alt="" class="branding-user-profile circular" />
+                            </template>
+                            <template lwc:else>
+                                <span class="p-c-both-center p-font-masthead-title">
+                                    {firstLastInitial}
+                                </span>
+                            </template>
+                        </div>
+                        <div class="p-c-both-center p-font-masthead-title" lwc:if={isMastheadExpanded}>
+                            {userName}
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="p-masthead-action">
+                        <span class="p-vertical-divider"></span>
+                    </div>
+                </li>
+                <li>
+                    <div role="button" 
+                        tabindex="0"
+                        class="p-masthead-action"
+                        onclick={handleAppSwitch}
+                        onkeyup={handleAppKeyUp}
+                    >
+                        <span class="p-c-both-center">
+                            <img src={switchAppIconUrl} alt="" />
+                        </span>
+                        <span class="p-c-both-center p-font-masthead-title">
+                            {i18n.switchAppButton}
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section class="p-main-content" role="main">
+        <slot></slot>
+    </section>
+   </div> 
 </template>
