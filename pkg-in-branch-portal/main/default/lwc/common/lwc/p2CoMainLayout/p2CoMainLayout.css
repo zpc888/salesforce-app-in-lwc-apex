@@ -8,6 +8,7 @@
     width: 100vw;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+    background-color: var(--p-color-white);
     z-index: 2;
 
     display: grid;
@@ -93,4 +94,11 @@ div[role="button"] {
 li button {
     background: none;
     border: none;
+}
+
+.p-body-layout {
+    display: grid;
+    grid-template-columns: 5rem auto 1fr auto;
+    grid-gap: 0;
+    background-color: var(--p-color-grey-light);
 }
