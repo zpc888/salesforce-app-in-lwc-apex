@@ -5,14 +5,14 @@ import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 import { mix, deepMerge, isNotEmpty } from "c/p0Funcs";
 import { MixinLangAware } from "c/p0WidgetMixin";
 
-import { en, fr } from "./p2CoMainLayout-i18n";
+import { en, fr } from "./p2MainLayout-i18n";
 
 const WIDTH_TO_COLLAPSE_MASTHEAD = 900;
 const WIDTH_TO_COLLAPSE_RIGHT_PANEL = 900;
 const WIDTH_TO_COLLAPSE_LEFT_RIGHT = 680;
 const EMPTY_USER_PHOTO_URL_SUFFIX = "profilephoto/005/T";
 
-export default class P2CoMainLayout extends mix(LightningElement).with(
+export default class P2MainLayout extends mix(LightningElement).with(
   MixinLangAware
 ) {
   isMastheadExpanded = true;
