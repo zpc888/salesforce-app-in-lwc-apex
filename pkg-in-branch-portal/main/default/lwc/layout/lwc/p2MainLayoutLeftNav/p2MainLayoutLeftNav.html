@@ -1,3 +1,84 @@
 <template>
-    
+    <ul class="p-left-nav" role="menu">
+        <li role="none">
+            <a class="p-left-nav-item"
+                href="#"
+                lwc:ref="refTasks"
+                role="menuitem"
+                data-item-name={tasksItemName}
+                onmouseenter={handleMouseOverNavItem}
+                onmouseleave={handleMouseOutNavItem}
+                onclick={handleClickNavItem}
+            >
+                <img src={tasksImage} alt="" />
+                <div class="p-left-nav-item-label p-font-body-secondary">
+                    {i18n.leftNavTasks}
+                </div>
+            </a>
+        </li>
+        <li role="none">
+            <a class="p-left-nav-item"
+                href="#"
+                lwc:ref="refClient"
+                role="menuitem"
+                data-item-name={clientItemName}
+                onmouseenter={handleMouseOverNavItem}
+                onmouseleave={handleMouseOutNavItem}
+                onclick={handleClickNavItem}
+            >
+                <img src={clientImage} alt="" />
+                <div class="p-left-nav-item-label p-font-body-secondary">
+                    {i18n.leftNavClient}
+                </div>
+            </a>
+        </li>
+        <li role="none">
+            <a class="p-left-nav-item"
+                href="#"
+                lwc:ref="refApplication"
+                role="menuitem"
+                data-item-name={applicationItemName}
+                onmouseenter={handleMouseOverNavItem}
+                onmouseleave={handleMouseOutNavItem}
+                onclick={handleClickNavItem}
+            >
+                <img src={applicationImage} alt="" />
+                <div class="p-left-nav-item-label p-font-body-secondary">
+                    {i18n.leftNavApplication}
+                </div>
+            </a>
+        </li>
+        <li role="none">
+            <a class="p-left-nav-item"
+                href="#"
+                lwc:ref="refSigning"
+                role="menuitem"
+                data-item-name={signingItemName}
+                onmouseenter={handleMouseOverNavItem}
+                onmouseleave={handleMouseOutNavItem}
+                onclick={handleClickNavItem}
+            >
+                <img src={signingImage} alt="" />
+                <div class="p-left-nav-item-label p-font-body-secondary">
+                    {i18n.leftNavSigning}
+                </div>
+            </a>
+        </li>
+        <li role="none">
+            <a class="p-left-nav-item"
+                href="#"
+                lwc:ref="refReferral"
+                role="menuitem"
+                data-item-name={referralItemName}
+                onmouseenter={handleMouseOverNavItem}
+                onmouseleave={handleMouseOutNavItem}
+                onclick={handleClickNavItem}
+            >
+                <img src={referralImage} alt="" />
+                <div class="p-left-nav-item-label p-font-body-secondary">
+                    {i18n.leftNavReferral}
+                </div>
+            </a>
+        </li>
+    </ul>
 </template>

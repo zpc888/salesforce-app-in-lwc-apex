@@ -9,6 +9,12 @@
 
         onlanguagechanged={handleLanguageChange}
     >
+        <c-p2-main-layout-left-nav
+            slot="leftNav"
+            lang-code = {langCode}
+            tasks-selected = "true"
+            application-notified = "true"
+        ></c-p2-main-layout-left-nav>
         <div slot="bodyContent">
             <h1>Main contents</h1>
         </div>

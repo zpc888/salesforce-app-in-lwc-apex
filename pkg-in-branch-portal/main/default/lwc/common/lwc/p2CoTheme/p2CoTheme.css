@@ -111,12 +111,19 @@
 
 
     /* themes */
-    --p-pg-bg-color: var(--p-color-white);
-    --p-pg-head-bg-color: var(--p-color-grey-dark);
+    /* --p-pg-bg-color: var(--p-color-white);
+    --p-pg-head-bg-color: var(--p-color-grey-dark); */
     --p-pg-content-left-nav-bg-color: var(--p-panel-dark-color);
     --p-pg-content-left-menu-bg-color: var(--p-panel-light-color);
     --p-pg-content-mid-bg-color: var(--p-color-white);
     --p-pg-content-right-bg-color: var(--p-color-white);
     --p-pg-content-footer-action-color: var(--p-panel-light-color);
+
+    --p-color-page-background: #E6DFE0;
+    --p-color-panel-border: #DCD6D7;
+
+    --p-color-left-menu-background: #F5F2F3;    /* BG Grey - 1 */
+    --p-color-left-nav-background: #FAF9F9;     /* BG Grey - 2 */
+    --p-color-highlight: #FDFDFD;               /* Highlight - 1 */
 
 }
