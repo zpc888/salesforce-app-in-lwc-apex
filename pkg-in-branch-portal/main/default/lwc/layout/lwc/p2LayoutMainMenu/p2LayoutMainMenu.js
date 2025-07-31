@@ -2,7 +2,7 @@ import { LightningElement, api } from "lwc";
 import { MixinLangAware } from "c/p0WidgetMixin";
 import { mix, deepMerge, isTrue } from "c/p0Funcs";
 
-import { en, fr } from "./p2MainLayoutLeftNav-i18n";
+import { en, fr } from "./p2LayoutMainMenu-i18n";
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
 export default class P2MainLayoutLeftNav extends mix(LightningElement).with(

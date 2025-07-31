@@ -5,7 +5,7 @@ import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 import { mix, deepMerge, isNotEmpty } from "c/p0Funcs";
 import { MixinLangAware } from "c/p0WidgetMixin";
 
-import { en, fr } from "./p2MainLayout-i18n";
+import { en, fr } from "./p2LayoutMain-i18n";
 
 const WIDTH_TO_COLLAPSE_MASTHEAD = 900;
 const WIDTH_TO_COLLAPSE_RIGHT_PANEL = 900;

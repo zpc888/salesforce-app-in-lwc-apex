@@ -1,5 +1,5 @@
 <template>
-    <c-p2-main-layout
+    <c-p2-layout-main
         user-id = {userId}
         user-first-name = {userFirstName}
         user-last-name = {userLastName}
@@ -9,14 +9,20 @@
 
         onlanguagechanged={handleLanguageChange}
     >
-        <c-p2-main-layout-left-nav
-            slot="leftNav"
+        <c-p2-layout-main-menu
+            slot="mainMenu"
             lang-code = {langCode}
             tasks-selected = "true"
             application-notified = "true"
-        ></c-p2-main-layout-left-nav>
-        <div slot="bodyContent">
+        ></c-p2-layout-main-menu>
+        <div slot="subMenu">
+            <h1>Sub Menu</h1>
+        </div>
+        <div>
             <h1>Main contents</h1>
         </div>
-    </c-p2-main-layout>
+        <div slot="activityReminder">
+            <h1>Activity Reminder</h1>
+        </div>
+    </c-p2-layout-main>
 </template>

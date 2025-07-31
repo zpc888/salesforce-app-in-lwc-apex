@@ -64,30 +64,17 @@
         </section>
     </section>
     <section class="p-body-layout" role="main">
-        <div class="p-body-left-nav">
-            <slot name="leftNav"></slot>
+        <div class="p-body-main-menu">
+            <slot name="mainMenu"></slot>
         </div>
-        <div class="p-body-left-menu">
-            <div class="p-body-left-menu-app-info">
-                <slot name="leftAppInfo"></slot>
-            </div>
-            <div class="p-body-left-menu-tree">
-                <slot name="leftTreeMenu"></slot>
-            </div>
+        <div class="p-body-sub-menu">
+            <slot name="subMenu"></slot>
         </div>
         <div class="p-body-main">
-            <div class="p-body-main-header">
-                <slot name="bodyHeader"></slot>
-            </div>
-            <div class="p-body-main-content">
-                <slot name="bodyContent"></slot>
-            </div>
-            <div class="p-body-main-footer">
-                <slot name="bodyFooter"></slot>
-            </div>
+            <slot></slot>
         </div>
-        <div class="p-body-right-panel">
-            <slot name="rightPanel"></slot>
+        <div class="p-body-activity-reminder">
+            <slot name="activityReminder"></slot>
         </div>
     </section>
    </div> 
