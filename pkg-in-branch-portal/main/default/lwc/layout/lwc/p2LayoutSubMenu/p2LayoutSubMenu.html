@@ -1,0 +1,27 @@
+<template>
+    <div class="p-sub-menu-wrapper">
+        <div class="p-sub-menu-top">
+            <div 
+                lwc:ref="refSubMenuTopLeft"
+                class="p-sub-menu-top-left" 
+                id="pSubMenuTopLeft">
+                <slot name="subMenuTopLeft"></slot>
+            </div>
+            <button 
+                aria-expanded={isExpanded}
+                aria-controls="pSubMenuTopLeft pSubMenuContent"
+                aria-label={subMenuAriaLabel}
+                onclick={handleToggleClick}
+                onmouseenter={handleMouseEnterToggle}
+                onmouseleave={handleMouseLeaveToggle}>
+                <img src={subMenuImage} alt="" />
+            </button>
+        </div>
+        <div 
+            lwc:ref="refSubMenuContent"
+            class="p-sub-menu-content" 
+            id="pSubMenuContent">
+            <slot></slot>
+        </div>
+    </div>
+</template>

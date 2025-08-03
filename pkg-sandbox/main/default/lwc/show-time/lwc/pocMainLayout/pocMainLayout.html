@@ -15,9 +15,18 @@
             tasks-selected = "true"
             application-notified = "true"
         ></c-p2-layout-main-menu>
-        <div slot="subMenu">
-            <h1>Sub Menu</h1>
-        </div>
+        <c-p2-layout-sub-menu
+            lang-code = {langCode}
+            slot="subMenu"
+        >
+            <div slot="subMenuTopLeft">
+                <h1>Sub Menu Top Left</h1>
+            </div>
+            <div>
+                <h1>Sub Menu Content</h1>
+                <p>Some content for the sub menu goes here.</p>
+            </div>
+        </c-p2-layout-sub-menu>
         <div>
             <h1>Main contents</h1>
         </div>

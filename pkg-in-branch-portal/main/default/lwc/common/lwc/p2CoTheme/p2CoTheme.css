@@ -122,8 +122,8 @@
     --p-color-page-background: #E6DFE0;
     --p-color-panel-border: #DCD6D7;
 
-    --p-color-left-menu-background: #F5F2F3;    /* BG Grey - 1 */
-    --p-color-left-nav-background: #FAF9F9;     /* BG Grey - 2 */
+    --p-color-main-menu-background: #FAF9F9;     /* BG Grey - 2 */
+    --p-color-sub-menu-background: #F5F2F3;    /* BG Grey - 1 */
     --p-color-highlight: #FDFDFD;               /* Highlight - 1 */
 
 }

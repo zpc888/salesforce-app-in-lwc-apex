@@ -18,12 +18,16 @@
 .p-masthead {
     height: 5rem;       /* 80px */
     padding: 0 1.625rem; /* 26px */
-    background-color: var(--p-color-white-80);
+    background-color: var(--p-color-grey-dark);
     
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
+}
+
+.p-masthead-brand-title-text {
+    color: var(--p-color-white);
 }
 
 .p-masthead-brand {
@@ -64,7 +68,7 @@ li .p-masthead-action {
 }
 
 li .p-font-masthead-title {
-    color: var(--p-color-grey-dark);
+    color: var(--p-color-white);
 }
 
 .p-masthead-user-photo > img {

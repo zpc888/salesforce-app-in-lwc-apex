@@ -17,7 +17,7 @@ fi
 sf lightning generate component --name $LWC_NAME --type lwc -d $LWC_PATH
 cd $LWC_PATH/$LWC_NAME
 touch $LWC_NAME.css
-echo -e '@import "c/p2CoCss";\n' > $LWC_NAME.css
+echo -e '@import "c/p2CoStyle";\n' > $LWC_NAME.css
 
 touch $LWC_NAME-i18n.js
 echo -e 'export const en = {\n};\n' > $LWC_NAME-i18n.js
