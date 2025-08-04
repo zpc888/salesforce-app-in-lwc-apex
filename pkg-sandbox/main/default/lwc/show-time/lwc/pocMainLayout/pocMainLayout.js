@@ -4,4 +4,14 @@ import { MixinPageBase } from "c/p2WidgetMixin";
 
 export default class PocMainLayout extends mix(LightningElement).with(
   MixinPageBase
-) {}
+) {
+  tooManyTreeMenu = false;
+
+  handleToggleTreeMenuOverflow() {
+    this.tooManyTreeMenu = !this.tooManyTreeMenu;
+  }
+
+  get toggleSubMenuOverflowOrNot() {
+    return this.tooManyTreeMenu ? "Shorten Tree Menu" : "Overflow Tree Menu";
+  }
+}
