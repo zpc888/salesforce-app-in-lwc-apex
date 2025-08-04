@@ -21,6 +21,8 @@
 .p-sub-menu-content {
     flex-grow: 1;
     overflow-y: auto;
+    display: flex;;
+    flex-direction: column;
 }
 
 .p-sub-menu-content::-webkit-scrollbar {
