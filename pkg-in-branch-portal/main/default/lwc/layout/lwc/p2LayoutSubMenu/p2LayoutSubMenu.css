@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     padding: 0.625rem; /* 10px */
-    height: calc(100vh - 5rem); /* masthead height: 80px */
+    height: calc(100vh - var(--p-masthead-height)); /* masthead height: 80px */
     background-color: var(--p-color-sub-menu-background);
     overflow: hidden;
 }

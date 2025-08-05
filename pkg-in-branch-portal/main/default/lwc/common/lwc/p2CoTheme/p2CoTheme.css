@@ -126,4 +126,5 @@
     --p-color-sub-menu-background: #F5F2F3;    /* BG Grey - 1 */
     --p-color-highlight: #FDFDFD;               /* Highlight - 1 */
 
+    --p-masthead-height: 5rem; /* 80px */
 }

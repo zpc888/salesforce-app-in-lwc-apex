@@ -16,7 +16,7 @@
 }
 
 .p-masthead {
-    height: 5rem;       /* 80px */
+    height: var(--p-masthead-height);       /* 80px */
     padding: 0 1.625rem; /* 26px */
     background-color: var(--p-color-grey-dark);
     
