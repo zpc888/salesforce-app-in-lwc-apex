@@ -1,0 +1,48 @@
+@import "c/p2CoStyle";
+
+.p-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 1.875rem; /* 10px 30px */
+    height: calc(100vh - var(--p-masthead-height)); /* masthead height: 80px */
+    gap: 1.25rem;   /* 20px */
+    overflow: hidden;
+}
+
+.p-content-top 
+, .p-content-bottom 
+{
+    flex-shrink: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.625rem;  /* 10px */
+}
+
+.p-content-bottom {
+    background-color: var(--p-color-white);
+    border-radius: 0.25rem; /* 4px */
+    padding: 1rem 0.5rem; /* 16px 8px */
+}
+
+.p-content-top {
+    padding: 0.625rem 0.625rem 0 0.625rem; /* 10px */
+} 
+
+.p-content-main {
+    padding: 0 0.625rem 0.625rem 0.625rem; /* 10px */
+}
+
+.p-content-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}

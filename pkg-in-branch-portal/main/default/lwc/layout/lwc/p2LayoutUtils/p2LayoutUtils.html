@@ -1,0 +1,23 @@
+<template>
+    <div class="p-utils-wrapper">
+        <div class="p-utils-top">
+            <button 
+                aria-expanded={isExpanded}
+                aria-controls="pUtilsContent"
+                aria-label={utilsAriaLabel}
+                onclick={handleToggleClick}
+                onmouseenter={handleMouseEnterToggle}
+                onmouseleave={handleMouseLeaveToggle}>
+                <img src={utilsImage} alt="" />
+            </button>
+        </div>
+        <div lwc:ref="refUtilsContent" class="p-utils-content" id="pUtilsContent">
+            <template lwc:if={isExpanded}>
+                <slot name="utilsExpanded"></slot>
+            </template>
+            <template lwc:else>
+                <slot name="utilsCollapsed"></slot>
+            </template>
+        </div>
+    </div>
+</template>

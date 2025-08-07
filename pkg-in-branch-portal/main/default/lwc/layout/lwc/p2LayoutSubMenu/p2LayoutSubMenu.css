@@ -19,6 +19,9 @@
 }
 
 .p-sub-menu-content {
+    margin-top: 0.625rem; /* 10px */
+    padding-top: 0.625rem; /* 10px */
+    border-top: 1px solid var(--p-color-grey-mid);
     flex-grow: 1;
     overflow-y: auto;
     display: flex;;

@@ -1,0 +1,30 @@
+.poc-utils {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 0.4rem;    /* 6px */
+}
+
+.poc-sub-menu {
+    padding: 0 0.4rem 0.4rem 0.4rem;    /* 6px */
+}
+
+.poc-utils-expanded {
+    flex-shrink: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0 0.625rem; /* 10px */
+}
+
+.poc-content-main {
+    background-color: var(--p-color-white);
+    border-radius: 4px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+} 
