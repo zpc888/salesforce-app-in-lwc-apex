@@ -52,7 +52,8 @@
     width: 0.375rem; /* 6px */
 }
 .p-content-main::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    /* background: #f1f1f1; */
+    background: var(--p-color-page-background);
     border-radius: 0.5rem; /* 8px */
 }
 
