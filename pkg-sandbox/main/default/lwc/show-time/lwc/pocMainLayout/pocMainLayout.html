@@ -133,6 +133,14 @@
         >
             <div slot="contentTop" class="poc-content-top">
                 <h1>Component Title</h1>
+                <template if:true={tooManyContents}>
+                    <h2>Sub title</h2>
+                    <div>
+                        <span>Tab 1</span>
+                        <span>Tab 2</span>
+                        <span>Tab 3</span>
+                    </div>
+                </template>
             </div>
             <div class="poc-content-main">
                 <div>Content line 1</div>

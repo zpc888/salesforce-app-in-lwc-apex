@@ -3,6 +3,7 @@
 .p-utils-wrapper {
     display: flex;
     flex-direction: column;
+    background-color: var(--p-color-page-background);
     padding: 0.625rem 0.3125rem; /* 10px 5px */
     height: calc(100vh - 5rem);
     overflow: hidden;
@@ -26,15 +27,15 @@
 }
 
 .p-utils-content::-webkit-scrollbar {
-    width: 0.5rem; /* 8px */
+    width: 0.375rem; /* 6px */
 }
 .p-utils-content::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.5rem; /* 8px */
 }
 .p-utils-content::-webkit-scrollbar-thumb {
     background: #888;
-    border-radius: 0.625rem; /* 10px */
+    border-radius: 0.5rem; /* 8px */
 }
 .p-utils-content::-webkit-scrollbar-thumb:hover {
     background: #555;
