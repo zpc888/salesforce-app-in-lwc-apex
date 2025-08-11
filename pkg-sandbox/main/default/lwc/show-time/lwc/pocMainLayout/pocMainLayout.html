@@ -20,7 +20,9 @@
             slot="subMenu"
         >
             <div slot="subMenuTopLeft">
-                <h1>Sub Menu Top Left</h1>
+                <c-p2-layout-app-info
+                    app-info = {appInfo}
+                ></c-p2-layout-app-info>
             </div>
             <div class="poc-sub-menu">
                 <button onclick={handleToggleTreeMenuOverflow}>{toggleSubMenuOverflowOrNot}</button>

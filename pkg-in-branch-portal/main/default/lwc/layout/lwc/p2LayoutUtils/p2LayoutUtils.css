@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+.p-utils-wrapper.p-expanded {
+    width: var(--p-utilities-width); /* 320px */
+}
+
 .p-utils-top {
     flex-shrink: 0;
     z-index: 5;

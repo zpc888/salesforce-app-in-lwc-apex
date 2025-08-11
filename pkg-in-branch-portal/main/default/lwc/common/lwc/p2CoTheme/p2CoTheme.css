@@ -127,4 +127,7 @@
     --p-color-highlight: #FDFDFD;               /* Highlight - 1 */
 
     --p-masthead-height: 5rem; /* 80px */
+
+    --p-sub-menu-width: 20rem; /* 320px */
+    --p-utilities-width: 20rem; /* 320px */
 }

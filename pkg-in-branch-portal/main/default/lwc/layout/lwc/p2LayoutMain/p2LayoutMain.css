@@ -106,3 +106,11 @@ li button {
     grid-gap: 0;
     background-color: var(--p-color-grey-light);
 }
+
+.p-body-sub-menu {
+    max-width: var(--p-sub-menu-width); /* 320px */
+}
+
+.p-body-utils {
+    max-width: var(--p-utilities-width); /* 320px */
+}

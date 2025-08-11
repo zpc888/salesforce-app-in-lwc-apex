@@ -45,6 +45,10 @@ export default class P2LayoutSubMenu extends mix(LightningElement).with(
       : this.i18n.arialLabelToExpand;
   }
 
+  renderedCallback() {
+    this.refs.refSubMenu.classList.toggle("p-expanded", this.isExpanded);
+  }
+
   handleMouseEnterToggle() {
     this._mouseOverToggle = true;
   }
@@ -63,5 +67,6 @@ export default class P2LayoutSubMenu extends mix(LightningElement).with(
       this.refs.refSubMenuTopLeft.style.display = "flex";
       this.refs.refSubMenuContent.style.display = "flex";
     }
+    this.refs.refSubMenu.classList.toggle("p-expanded", this.isExpanded);
   }
 }

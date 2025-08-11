@@ -45,6 +45,10 @@ export default class P2LayoutUtils extends mix(LightningElement).with(
       : this.i18n.arialLabelToExpand;
   }
 
+  renderedCallback() {
+    this.refs.refUtils.classList.toggle("p-expanded", this.isExpanded);
+  }
+
   handleMouseEnterToggle() {
     this._mouseOverToggle = true;
   }
@@ -59,5 +63,6 @@ export default class P2LayoutUtils extends mix(LightningElement).with(
     } else {
       this.status = "expanded";
     }
+    this.refs.refUtils.classList.toggle("p-expanded", this.isExpanded);
   }
 }

@@ -1,0 +1,34 @@
+@import "c/p2CoStyle";
+
+.p-app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3125rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.p-app-info-header {
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.p-app-info-attrs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    padding: 0.625rem 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.p-app-info-attr {
+    display: flex;
+    flex-direction: column;
+    /* gap: 0.3125rem; */
+    justify-content: center;
+    align-items: flex-start;
+}
