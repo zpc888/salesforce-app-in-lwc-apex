@@ -47,6 +47,10 @@ export const MixinPageBase = (Base) =>
       return this.userLanguage === FRENCH_LOCALE_KEY ? "fr" : "en";
     }
 
+    get isLangEnglish() {
+      return this.langCode === "en";
+    }
+
     get hasError() {
       return isNotEmpty(this.error);
     }

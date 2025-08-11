@@ -16,10 +16,24 @@ export default class PocMainLayout extends mix(LightningElement).with(
   get appInfo() {
     return {
       imgUrl: this.clientImg,
-      clientName: "Business Client Name",
+      clientName: this.isLangEnglish ? "Business Client Name" : "Nom du client",
       attrs: [
-        { label: "Client attribute 1", value: "Content placeholder 1" },
-        { label: "Client attribute 2", value: "Content placeholder 2" }
+        {
+          label: this.isLangEnglish
+            ? "Client attribute 1"
+            : "Attribut du client 1",
+          value: this.isLangEnglish
+            ? "Content placeholder 1"
+            : "Contenu de remplacement 1"
+        },
+        {
+          label: this.isLangEnglish
+            ? "Client attribute 2"
+            : "Attribut du client 2",
+          value: this.isLangEnglish
+            ? "Content placeholder 2"
+            : "Contenu de remplacement 2"
+        }
       ]
     };
   }
