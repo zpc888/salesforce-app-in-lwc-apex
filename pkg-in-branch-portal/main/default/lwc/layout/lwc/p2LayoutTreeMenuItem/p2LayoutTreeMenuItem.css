@@ -1,0 +1,76 @@
+@import "c/p2CoStyle";
+
+.p-tree-menu {
+    height: 70px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    column-gap: 4px;
+    row-gap: 2px;
+    /* padding-right: 8px; */
+    border-radius: 4px;
+    border-left: 5px solid transparent; /* Keep the border-left for visual indication - when hover over or focused, no dynamic change */
+    /* background-color: #F2F3F2;
+    color: #38383E; */
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.p-tree-menu-level1 {
+    padding-left: 6px;
+}
+
+.p-tree-menu-level2 {
+    padding-left: 12px;
+}
+
+
+.p-tree-menu:hover,
+.p-tree-menu.p-tree-menu-selected {
+    background-color: var(--p-color-white);
+    border-left: 5px solid;
+}
+
+.p-tree-menu:hover .bb-tree-menu-img img,
+.p-tree-menu.p-tree-menu-selected .bb-tree-menu-img img {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.p-tree-menu-is-pending {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="70"><circle r="4" cx="32" cy="12" fill="%23F55" />Sorry, inline svg not supported.</svg>');
+}
+
+.p-tree-menu-img-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+
+.p-tree-menu-img-level1 {
+    width: 40px;
+    height: 40px;
+}
+
+.p-tree-menu-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-tree-menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.p-tree-menu-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

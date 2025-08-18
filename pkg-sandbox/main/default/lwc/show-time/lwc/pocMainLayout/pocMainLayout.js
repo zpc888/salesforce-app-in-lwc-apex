@@ -38,6 +38,89 @@ export default class PocMainLayout extends mix(LightningElement).with(
     };
   }
 
+  get treeMenuItems() {
+    return [
+      {
+        itemKey: "deposit",
+        itemText: this.isLangEnglish ? "Deposit" : "Dépôt",
+        itemType: "deposit",
+        status: "pending",
+        kids: [
+          {
+            itemKey: "depositApp",
+            itemText: this.isLangEnglish
+              ? "Deposit Application"
+              : "Application de dépôt",
+            itemType: "depositApp",
+            status: "pending",
+            kids: Array.from({ length: 4 }, (_, i) => i + 1).map((i) => ({
+              itemKey: "depositProd" + i,
+              itemText: this.isLangEnglish
+                ? "Deposit Product " + i
+                : "Produit de dépôt " + i,
+              itemType: "depositProd",
+              status: i % 2 == 0 ? "ok" : "pending"
+            }))
+          },
+          {
+            itemKey: "cardApp",
+            itemText: this.isLangEnglish
+              ? "Debit Card Application"
+              : "Application de carte de débit",
+            itemType: "cardApp",
+            status: "pending",
+            kids: Array.from({ length: 3 }, (_, i) => i + 1).map((i) => ({
+              itemKey: "debitCardProd" + i,
+              itemText: this.isLangEnglish
+                ? "Debit Card " + i
+                : "Carte de débit " + i,
+              itemType: "debitCardProd",
+              status: i % 2 == 0 ? "ok" : "pending"
+            }))
+          },
+          {
+            itemKey: "manualReview",
+            itemText: this.isLangEnglish
+              ? "Manual Review Request"
+              : "Demande de révision manuelle",
+            itemType: "manualReview",
+            status: "ok"
+          }
+        ]
+      },
+      {
+        itemKey: "lending",
+        itemText: this.isLangEnglish ? "Lending" : "Prêt",
+        itemType: "lending",
+        status: "pending",
+        kids: [
+          {
+            itemKey: "lendingApp",
+            itemText: this.isLangEnglish
+              ? "Lending Application"
+              : "Application de prêt",
+            itemType: "lendingApp",
+            status: "pending",
+            kids: Array.from({ length: 120 }, (_, i) => i + 1).map((i) => ({
+              itemKey: "lendingProd" + i,
+              itemText: this.isLangEnglish
+                ? "Lending Product " + i
+                : "Produit de prêt " + i,
+              itemType: "lendingProd",
+              status: "pending"
+            }))
+          }
+        ]
+      },
+      {
+        itemKey: "creditCard",
+        itemText: this.isLangEnglish ? "Credit Card" : "Carte de crédit",
+        itemType: "creditCard",
+        status: "pending"
+      }
+    ];
+  }
+
   handleToggleTreeMenuOverflow() {
     this.tooManyTreeMenu = !this.tooManyTreeMenu;
   }

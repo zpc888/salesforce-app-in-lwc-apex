@@ -1,0 +1,62 @@
+<template>
+    <button class={cssClass} onclick={handleSelection} role="menuitem">
+        <div class="p-tree-menu-img-text">
+            <template if:true={hasIcon}>
+                <template lwc:if={isLevel0}>
+                    <div class="p-tree-menu-icon0">
+                        <lightning-icon icon-name={item.iconName} size="small"></lightning-icon>lightning-icon
+                    </div>
+                </template>
+                <template lwc:elseif={isLevel1}>
+                    <div class="p-tree-menu-icon1">
+                        <lightning-icon icon-name={item.iconName} size="x-small"></lightning-icon>lightning-icon
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="p-tree-menu-icon2">
+                        <lightning-icon icon-name={item.iconName} size="xx-small"></lightning-icon>lightning-icon
+                    </div>
+                </template>
+            </template>
+            <template if:true={hasItemImg}>
+                <template lwc:if={isLevel1}>
+                    <div class="p-tree-menu-img p-tree-menu-img-level1">
+                        <img src={itemImg} alt="" />
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="p-tree-menu-img">
+                        <img src={itemImg} alt="" />
+                    </div>
+                </template>
+            </template>
+            <div class="p-tree-menu-text" lwc:ref="refText">
+                <lightning-formatted-rich-text 
+                    class="p-tree-menu-text-line1"
+                    value={item.itemText}></lightning-formatted-rich-text>
+                <template lwc:if={hasTextLine2}>
+                    <lightning-formatted-rich-text 
+                        class="p-tree-menu-text-line2"
+                        value={item.textLine2}></lightning-formatted-rich-text>
+                </template>
+                <template lwc:if={hasTextLine3}>
+                    <lightning-formatted-rich-text 
+                        class="p-tree-menu-text-line3"
+                        value={item.textLine3}></lightning-formatted-rich-text>
+                </template>
+            </div>
+        </div>
+        <div class="p-tree-menu-status" lwc:ref="refStatus">
+            <template if:true={isLevel1}>
+                <template if:true={hasKids}>
+                    <template lwc:if={isSelectedOrAncestor}>
+                        <img src={expandedImg} alt="" />
+                    </template>
+                    <template lwc:else>
+                        <img src={collapsedImg} alt="" />
+                    </template>
+                </template>
+            </template>
+        </div>
+    </button>
+</template>

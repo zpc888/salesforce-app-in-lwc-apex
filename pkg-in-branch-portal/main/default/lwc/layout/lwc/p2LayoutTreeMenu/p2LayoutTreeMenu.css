@@ -1,2 +1,7 @@
 @import "c/p2CoStyle";
 
+.p-tree-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

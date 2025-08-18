@@ -4,9 +4,9 @@
     padding: 0.4rem;    /* 6px */
 }
 
-.poc-sub-menu {
-    padding: 0 0.4rem 0.4rem 0.4rem;    /* 6px */
-}
+/* .poc-tree-menu { */
+    /* padding: 0 0.4rem 0.4rem 0.4rem; */    /* 6px */
+/* } */
 
 .poc-utils-expanded {
     flex-shrink: 0;
