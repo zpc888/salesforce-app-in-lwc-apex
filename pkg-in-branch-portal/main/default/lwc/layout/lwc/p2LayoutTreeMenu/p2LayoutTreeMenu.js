@@ -19,7 +19,7 @@ export default class P2LayoutTreeMenu extends LightningElement {
         kids: [...self recursive]
     }
     */
-  @api selectedKey;
+  _selectedKey;
 
   _flatMenuItems = [];
   _flattenAlready = false;
@@ -32,6 +32,15 @@ export default class P2LayoutTreeMenu extends LightningElement {
         }
       })
     );
+  }
+
+  @api get selectedKey() {
+    return this._selectedKey;
+  }
+
+  set selectedKey(value) {
+    this._selectedKey = value;
+    this._flattenAlready = false; // reset flattening
   }
 
   get flatMenuItems() {

@@ -19,24 +19,26 @@
             lang-code = {langCode}
             slot="subMenu"
         >
-            <div slot="subMenuTopLeft">
-                <c-p2-layout-app-info
-                    app-info = {appInfo}
-                ></c-p2-layout-app-info>
-            </div>
-            <div class="poc-tree-menu">
-                <c-p2-layout-tree-menu
-                    selected-key="deposit.depositApp"
-                    menu-items = {treeMenuItems}
+            <c-p2-layout-app-info
+                app-info = {appInfo}
+                slot="subMenuTopLeft"
+            ></c-p2-layout-app-info>
+            <!-- <div class="poc-tree-menu"> -->
+            <c-p2-layout-tree-menu
+                selected-key={treeMenuSelectedItem}
+                menu-items = {treeMenuItems}
+                onmenuselect={handleMenuSelect}
                 ></c-p2-layout-tree-menu>
-            </div>
+            <!-- </div> -->
         </c-p2-layout-sub-menu>
 
         <c-p2-layout-content
             lang-code = {langCode}
         >
             <div slot="contentTop" class="poc-content-top">
-                <h1>Component Title</h1>
+                <h1>{currentPage}
+                <span if:true={hasPrevPage}> &lt;&lt;&lt;=== {prevPage}</span>
+                </h1>
                 <template if:true={tooManyContents}>
                     <h2>Sub title</h2>
                     <div>

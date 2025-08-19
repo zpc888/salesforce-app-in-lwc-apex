@@ -1,5 +1,5 @@
 import { LightningElement } from "lwc";
-import { mix } from "c/p0Funcs";
+import { mix, isNotEmpty } from "c/p0Funcs";
 import { MixinPageBase } from "c/p2WidgetMixin";
 
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
@@ -12,6 +12,11 @@ export default class PocMainLayout extends mix(LightningElement).with(
   tooManyContents = false;
 
   clientImg = IMAGES_URL + "/placeholder-30.svg";
+
+  treeMenuSelectedItem = "deposit.depositApp";
+
+  currentPage = "Deposit > Deposit Application";
+  prevPage = "";
 
   get appInfo() {
     return {
@@ -119,6 +124,16 @@ export default class PocMainLayout extends mix(LightningElement).with(
         status: "pending"
       }
     ];
+  }
+
+  get hasPrevPage() {
+    return isNotEmpty(this.prevPage);
+  }
+
+  handleMenuSelect(event) {
+    this.treeMenuSelectedItem = event.detail.key;
+    this.prevPage = event.detail.prevKey;
+    this.currentPage = event.detail.key;
   }
 
   handleToggleTreeMenuOverflow() {

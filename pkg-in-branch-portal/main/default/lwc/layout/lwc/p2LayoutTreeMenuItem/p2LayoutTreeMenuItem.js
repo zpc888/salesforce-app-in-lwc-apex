@@ -1,12 +1,12 @@
 import { LightningElement, api } from "lwc";
 
-import { isNotEmpty } from "c/p0Funcs";
+import { isNotEmpty, isEmpty } from "c/p0Funcs";
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
 const ROOT_ITEM_LEVEL = 0;
 export default class P2LayoutTreeMenuItem extends LightningElement {
-  @api item;
-  @api selectedKey;
+  _item;
+  _selectedKey;
 
   itemImg;
   // textLine1 - item.itemText
@@ -17,6 +17,24 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
 
   expandedImg = IMAGES_URL + "/chevron-down.svg";
   collapsedImg = IMAGES_URL + "/chevron-up.svg";
+
+  @api get item() {
+    return this._item;
+  }
+
+  @api get selectedKey() {
+    return this._selectedKey;
+  }
+
+  set item(value) {
+    this._item = value;
+    this._refresh();
+  }
+
+  set selectedKey(value) {
+    this._selectedKey = value;
+    this._refresh();
+  }
 
   get hasItemImg() {
     return isNotEmpty(this.itemImg);
@@ -101,7 +119,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     return this.isSelected || this.isAncestorOfSelection;
   }
 
-  connectedCallback() {
+  _refresh() {
+    if (isEmpty(this.item) || isEmpty(this.selectedKey)) {
+      return;
+    }
     /*
     if (this.item.itemType === "client") {
       this.itemTypeCssSuffix = "client";
@@ -126,6 +147,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     }
       */
     if (this.isLevel0) {
+      this.itemImg = null;
       // no image for first level
     } else if (this.isLevel1) {
       if (
