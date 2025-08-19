@@ -47,22 +47,36 @@ export default class P2LayoutTreeMenu extends LightningElement {
     if (this._flattenAlready) {
       return this._flatMenuItems;
     }
-    if (this.selectedKey && this.menuItems) {
-      console.log("ZPC debug: ", JSON.stringify(this.menuItems, null, 2));
+    if (this._selectedKey && this.menuItems) {
+      if (this._selectedKey.split(".").length === 1) {
+        // root level selection
+        const rootItem = this.menuItems.filter(
+          (item) => item.itemKey === this._selectedKey
+        );
+        if (rootItem.length === 1 && !rootItem[0].hasContent) {
+          // not allow to click at root level
+          // auto to make the first child clickable
+          if (rootItem[0].kids && rootItem[0].kids.length > 0) {
+            this._selectedKey =
+              this._selectedKey + "." + rootItem[0].kids[0].itemKey;
+          }
+        }
+      }
+      // console.log("ZPC debug: ", JSON.stringify(this.menuItems, null, 2));
       const collector = [];
       this.menuItems.forEach((v, i) => {
         buildFlatMenus(collector, "", v, i, ROOT_ITEM_LEVEL);
       });
       this._flatMenuItems = collector;
-      console.log("ZPC debug 2: ", JSON.stringify(collector, null, 2));
-      const treeMenuMatcher = buildTreeMenuAncestorsMatcher(this.selectedKey);
+      // console.log("ZPC debug 2: ", JSON.stringify(collector, null, 2));
+      const treeMenuMatcher = buildTreeMenuAncestorsMatcher(this._selectedKey);
       for (const item of this._flatMenuItems) {
         item.visible = treeMenuMatcher.match(item.itemKey);
       }
-      console.log(
-        "ZPC debug 3: ",
-        JSON.stringify(this._flatMenuItems, null, 2)
-      );
+      // console.log(
+      //   "ZPC debug 3: ",
+      //   JSON.stringify(this._flatMenuItems, null, 2)
+      // );
       this._flattenAlready = true;
       return this._flatMenuItems;
     } else {
