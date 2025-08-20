@@ -8,8 +8,14 @@
     column-gap: 4px;
     row-gap: 2px;
     /* padding-right: 8px; */
-    border-radius: 4px;
-    border-left: 5px solid transparent; /* Keep the border-left for visual indication - when hover over or focused, no dynamic change */
+    border-radius: 10px;
+    border: 1px solid white;
+    /* border: 1px solid;
+    border-image: linear-gradient(to right, #FFFFFF 0%, #FFFFFF 77%, rgba(255, 255, 255, 0) 100%);
+    border-image-slice: 1; */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    /* border-left: 5px solid transparent;  */
+    /* Keep the border-left for visual indication - when hover over or focused, no dynamic change */
     /* background-color: #F2F3F2;
     color: #38383E; */
 }
@@ -31,7 +37,7 @@ button {
 .p-tree-menu:hover,
 .p-tree-menu.p-tree-menu-selected {
     background-color: var(--p-color-white);
-    border-left: 5px solid;
+    /* border-left: 5px solid; */
 }
 
 .p-tree-menu:hover .bb-tree-menu-img img,

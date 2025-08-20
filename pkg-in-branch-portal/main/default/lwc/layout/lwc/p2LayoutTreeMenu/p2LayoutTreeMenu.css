@@ -3,5 +3,7 @@
 .p-tree-menu-wrapper {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     width: 100%;
+    padding: 0 2px;
 }
