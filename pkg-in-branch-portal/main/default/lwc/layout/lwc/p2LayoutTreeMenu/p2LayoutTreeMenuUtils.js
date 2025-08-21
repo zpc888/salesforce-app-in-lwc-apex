@@ -1,4 +1,4 @@
-import { firstNotEmpty } from "c/p0Funcs";
+import { firstNotEmpty, isNotEmpty } from "c/p0Funcs";
 
 export function buildTreeMenuAncestorsMatcher(selectedMenuKey) {
   const parts = selectedMenuKey.split(".");
@@ -32,6 +32,7 @@ function parseItemData(item) {
       item.itemData.rolesText,
       item.itemData.accountNumber
     );
+    textLine3 = item.itemData.textLine3;
   }
   return {
     textLine2,
@@ -45,6 +46,8 @@ export function buildFlatMenus(listCollector, parentKey, item, index, level) {
   const hasKids = item.kids && item.kids.length > 0;
   listCollector.push({
     itemKey,
+    needsDivider: level === 0 && isNotEmpty(listCollector),
+    dividerKey: level === 0 ? `${itemKey}-divider` : null,
     nestedLevel: level,
     iconName: item.iconName,
     itemText: item.itemText,

@@ -64,6 +64,13 @@ export default class PocMainLayout extends mix(LightningElement).with(
                 ? "Deposit Product " + i
                 : "Produit de dépôt " + i,
               itemType: "depositProd",
+              itemData:
+                i % 2 == 0
+                  ? {
+                      accountNumber: "123456789" + i,
+                      textLine3: i < 3 ? "RRSP" : "TFSA"
+                    }
+                  : {},
               status: i % 2 == 0 ? "ok" : "pending"
             }))
           },

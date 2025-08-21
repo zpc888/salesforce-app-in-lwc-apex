@@ -7,3 +7,9 @@
     width: 100%;
     padding: 0 2px;
 }
+
+.p-tree-menu-divider {
+    height: 1px;
+    background-color: var(--p-color-grey-mid);
+    width: 100%;
+}

@@ -1,5 +1,8 @@
 <template>
-    <button class={cssClass} onclick={handleSelection} role="menuitem">
+    <button lwc:ref="refButton" 
+            class={cssClass} 
+            onclick={handleSelection} 
+            role="menuitem">
         <div class="p-tree-menu-img-text">
             <template if:true={hasIcon}>
                 <template lwc:if={isLevel0}>

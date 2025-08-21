@@ -1,6 +1,9 @@
 <template>
     <div class="p-tree-menu-wrapper">
         <template for:each={flatMenuItems} for:item="item">
+            <template lwc:if={item.needsDivider}>
+                <div class="p-tree-menu-divider" key={item.dividerKey}></div>
+            </template>
             <c-p2-layout-tree-menu-item
                 lwc:if={item.visible}
                 key={item.key}

@@ -189,6 +189,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
           ? "p-font-h2-title"
           : "p-font-h3-title"
     );
+    this.refs.refButton.disabled = this.isSelectedOrAncestor;
   }
 
   handleSelection() {

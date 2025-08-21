@@ -1,7 +1,6 @@
 @import "c/p2CoStyle";
 
 .p-tree-menu {
-    height: 70px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 40px;
@@ -20,6 +19,10 @@
     color: #38383E; */
 }
 
+.p-tree-menu-level0 {
+    height: 40px;
+}
+
 button {
     background: none;
     border: none;
@@ -27,22 +30,51 @@ button {
 
 .p-tree-menu-level1 {
     padding-left: 6px;
+    height: 70px;
 }
 
 .p-tree-menu-level2 {
     padding-left: 12px;
+    min-height: 40px;
 }
 
-
+/* .p-tree-menu.p-tree-menu-level1.p-tree-menu-expanded, */
 .p-tree-menu:hover,
 .p-tree-menu.p-tree-menu-selected {
     background-color: var(--p-color-white);
     /* border-left: 5px solid; */
 }
 
+button.p-tree-menu.p-tree-menu-level1.p-tree-menu-expanded,
+button.p-tree-menu.p-tree-menu-level1.p-tree-menu-expanded:hover,
+button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded,
+button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded:hover {
+    background-color: unset;
+}
+
+button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded,
+button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded:hover {
+    border: none;
+    box-shadow: none;
+    border-radius: unset;
+}
+
+/* .p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded, */
+.p-tree-menu.p-tree-menu-level0:hover,
+.p-tree-menu.p-tree-menu-level0.p-tree-menu-selected {
+    background-color: var(--p-color-white);
+    border: none;
+    box-shadow: none;
+    border-radius: unset;
+}
+
 .p-tree-menu:hover .bb-tree-menu-img img,
 .p-tree-menu.p-tree-menu-selected .bb-tree-menu-img img {
     filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.p-tree-menu-level0 .p-tree-menu-is-pending {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle r="4" cx="32" cy="20" fill="%23F55" />Sorry, inline svg not supported.</svg>');
 }
 
 .p-tree-menu-is-pending {
