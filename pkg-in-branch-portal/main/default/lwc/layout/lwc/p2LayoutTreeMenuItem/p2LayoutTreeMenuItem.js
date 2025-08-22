@@ -182,6 +182,11 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
       "p-tree-menu-is-pending",
       this.isPendingStatus
     );
+    this.refs.refText.classList.remove(
+      "p-font-h1-title",
+      "p-font-h2-title",
+      "p-font-h3-title"
+    );
     this.refs.refText.classList.add(
       this.isLevel0
         ? "p-font-h1-title"
