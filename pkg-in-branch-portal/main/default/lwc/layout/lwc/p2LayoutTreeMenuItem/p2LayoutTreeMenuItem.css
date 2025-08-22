@@ -29,6 +29,7 @@ button {
 }
 
 .p-tree-menu-level1 {
+    margin-top: 5px;
     padding-left: 6px;
     height: 70px;
 }

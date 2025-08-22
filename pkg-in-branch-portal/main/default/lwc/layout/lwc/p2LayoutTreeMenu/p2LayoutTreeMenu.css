@@ -9,6 +9,7 @@
 }
 
 .p-tree-menu-divider {
+    margin: 5px 0;
     height: 1px;
     background-color: var(--p-color-grey-mid);
     width: 100%;
