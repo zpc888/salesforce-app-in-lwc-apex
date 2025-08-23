@@ -1,4 +1,5 @@
 @import "c/p2CoStyle";
+@import "c/p2CoResponsiveCss";
 
 .p-sub-menu-wrapper {
     display: flex;
@@ -10,7 +11,11 @@
 }
 
 .p-sub-menu-wrapper.p-expanded {
-    width: var(--p-sub-menu-width);   /* 320px */
+    width: var(--p-sub-menu-width);   /* media query */
+}
+
+.p-sub-menu-wrapper:not(.p-expanded) {
+    width: 60px;
 }
 
 .p-sub-menu-top {

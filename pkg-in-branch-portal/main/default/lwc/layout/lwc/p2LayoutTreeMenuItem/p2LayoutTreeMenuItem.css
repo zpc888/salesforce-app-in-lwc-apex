@@ -39,11 +39,9 @@ button {
     min-height: 50px;
 }
 
-/* .p-tree-menu.p-tree-menu-level1.p-tree-menu-expanded, */
 .p-tree-menu:hover,
-.p-tree-menu.p-tree-menu-selected {
+.p-tree-menu.p-tree-menu-selected:not(.p-tree-menu-level0) {
     background-color: var(--p-color-white);
-    /* border-left: 5px solid; */
 }
 
 button.p-tree-menu.p-tree-menu-level1.p-tree-menu-expanded,
@@ -61,9 +59,7 @@ button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded:hover {
 }
 
 /* .p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded, */
-.p-tree-menu.p-tree-menu-level0:hover,
 .p-tree-menu.p-tree-menu-level0.p-tree-menu-selected {
-    background-color: var(--p-color-white);
     border: none;
     box-shadow: none;
     border-radius: unset;
@@ -106,6 +102,7 @@ button.p-tree-menu.p-tree-menu-level0.p-tree-menu-expanded:hover {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    text-align: start;
 }
 
 .p-tree-menu-status {

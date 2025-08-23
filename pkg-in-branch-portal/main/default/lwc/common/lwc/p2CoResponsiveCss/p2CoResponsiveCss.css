@@ -1,0 +1,20 @@
+@media only screen and (max-width: 1400px) {
+    :host {
+        --p-sub-menu-width: 240px;
+        --p-utilities-width: 240px;
+    }
+}
+
+@media only screen and (min-width: 1401px) and (max-width: 1920px) {
+    :host {
+        --p-sub-menu-width: 320px;
+        --p-utilities-width: 320px;
+    }
+}
+
+@media only screen and (min-width: 1921px) {
+    :host {
+        --p-sub-menu-width: 400px;
+        --p-utilities-width: 400px;
+    }
+}

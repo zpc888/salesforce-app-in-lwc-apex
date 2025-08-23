@@ -1,4 +1,5 @@
 @import "c/p2CoStyle";
+@import "c/p2CoResponsiveCss";
 
 .p-utils-wrapper {
     display: flex;
@@ -10,7 +11,7 @@
 }
 
 .p-utils-wrapper.p-expanded {
-    width: var(--p-utilities-width); /* 320px */
+    width: var(--p-utilities-width); /* 320px responsive via media query */
 }
 
 .p-utils-top {
