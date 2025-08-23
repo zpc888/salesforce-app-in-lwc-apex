@@ -128,7 +128,34 @@ export default class PocMainLayout extends mix(LightningElement).with(
         itemKey: "creditCard",
         itemText: this.isLangEnglish ? "Credit Card" : "Carte de crédit",
         itemType: "creditCard",
-        status: "pending"
+        status: "pending",
+        kids: [
+          {
+            itemKey: "creditCardPkg",
+            itemText: this.isLangEnglish
+              ? "Credit Card Package"
+              : "Forfait de carte de crédit",
+            itemType: "creditCardPkg",
+            status: "pending",
+            kids: Array.from({ length: 3 }, (_, i) => i + 1).map((i) => ({
+              itemKey: "creditCardProd" + i,
+              itemText: this.isLangEnglish
+                ? "Credit Card " + i
+                : "Carte de crédit " + i,
+              itemData: {
+                accountNumber: "123456789" + i,
+                textLine3:
+                  i <= 1
+                    ? "Visa Infinite"
+                    : i <= 2
+                      ? "Visa Platinum"
+                      : "Visa Classic"
+              },
+              itemType: "creditCardProd",
+              status: i % 2 == 0 ? "ok" : "pending"
+            }))
+          }
+        ]
       }
     ];
   }

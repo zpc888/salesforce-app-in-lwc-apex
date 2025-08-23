@@ -1,6 +1,7 @@
 @import "c/p2CoStyle";
 
 .p-left-nav {
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
