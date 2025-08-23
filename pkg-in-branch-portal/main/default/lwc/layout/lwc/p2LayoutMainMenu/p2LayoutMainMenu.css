@@ -5,6 +5,7 @@
     flex-direction: column;
     flex-shrink: 0;
     align-items: center;
+    gap: 10px;
     height: 100%;
     background-color: var(--p-color-main-menu-background);
     color: var(--p-color-grey-dark);
@@ -20,17 +21,17 @@
     justify-content: center;
     align-content: center;
     justify-items: center;
+    border-radius: 10px;
 }
 
-.p-left-nav-item:hover:not(.p-left-nav-item-selected) {
-    background-color: var(--p-color-white);
-}
+.p-left-nav-item:hover:not(.p-left-nav-item-selected),
 .p-left-nav-item.p-left-nav-item-selected {
     background-color: var(--p-color-highlight);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 
 .p-left-nav-item-notified {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle r="4" cx="70" cy="20" fill="%23F55" />Sorry, inline svg not supported.</svg>');
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle r="4" cx="72" cy="8" fill="%23F55" />Sorry, inline svg not supported.</svg>');
 }
 
 .p-left-nav-item-label {

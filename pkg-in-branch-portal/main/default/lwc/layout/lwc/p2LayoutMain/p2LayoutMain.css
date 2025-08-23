@@ -103,7 +103,7 @@ li button {
 
 .p-body-layout {
     display: grid;
-    grid-template-columns: 5rem auto 1fr auto;
+    grid-template-columns: 5.625rem auto 1fr auto;
     grid-gap: 0;
     background-color: var(--p-color-grey-light);
 }
