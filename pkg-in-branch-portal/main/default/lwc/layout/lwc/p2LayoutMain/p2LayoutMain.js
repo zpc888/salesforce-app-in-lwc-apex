@@ -83,75 +83,72 @@ export default class P2MainLayout extends mix(LightningElement).with(
   }
 
   _handleWindowResize(isInitial = false) {
+    const oldWidth = this.#widowWidth;
     this.#widowWidth = window.innerWidth;
     this.isMastheadExpanded = this.#widowWidth > WIDTH_TO_COLLAPSE_MASTHEAD;
-    if (!isInitial) {
-      if (!this.#manualColseLeftMenu) {
-        this.isLeftMenuExpanded = true;
-        this.refs.refContentLeft.classList.remove("p-collapsed");
-      }
-      if (!this.#manualColseRightPanel) {
-        this.isRightPanelExpanded = true;
-        this.refs.refContentLeft.classList.remove("p-collapsed");
-      }
+    const slotSubMenu = this.querySelector("*[slot='subMenu']"); // light dom   VS shadow dom
+    const slotUtils = this.querySelector("*[slot='utils']"); // instance vs template
+    if (
+      this._crossBoundaryChange(
+        WIDTH_TO_COLLAPSE_LEFT_RIGHT,
+        oldWidth,
+        this.#widowWidth
+      ) &&
+      slotSubMenu &&
+      slotSubMenu.handleWindowResize
+    ) {
+      const subMenuCollapsed = this.#widowWidth <= WIDTH_TO_COLLAPSE_LEFT_RIGHT;
+      slotSubMenu.handleWindowResize(isInitial, subMenuCollapsed);
     }
-    if (this.#widowWidth < WIDTH_TO_COLLAPSE_RIGHT_PANEL) {
-      this.isRightPanelExpanded = false;
-      if (!this.refs.refContentRight.classList.contains("p-collapsed")) {
-        this.refs.refContentRight.classList.add("p-collapsed");
-      }
+    if (
+      this._crossBoundaryChange(
+        WIDTH_TO_COLLAPSE_RIGHT_PANEL,
+        oldWidth,
+        this.#widowWidth
+      ) &&
+      slotUtils &&
+      slotUtils.handleWindowResize
+    ) {
+      const utilsCollapsed = this.#widowWidth <= WIDTH_TO_COLLAPSE_RIGHT_PANEL;
+      slotUtils.handleWindowResize(isInitial, utilsCollapsed);
     }
-    if (this.#widowWidth < WIDTH_TO_COLLAPSE_LEFT_RIGHT) {
-      this.isLeftMenuExpanded = false;
-      if (!this.refs.refContentLeft.classList.contains("p-collapsed")) {
-        this.refs.refContentLeft.classList.add("p-collapsed");
-      }
-    }
+  }
+
+  _crossBoundaryChange(boundary, prev, curr) {
+    return prev <= boundary !== curr <= boundary;
   }
 
   handleLanguageSwitch() {
     this.dispatchEvent(new CustomEvent("languagechanged"));
   }
 
-  handleLanguageKeyUp(event) {
-    if (event.key === "Enter" || event.key === " ") {
-      this.handleLanguageSwitch();
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
+  // handleLanguageKeyUp(event) {
+  //   if (event.key === "Enter" || event.key === " ") {
+  //     this.handleLanguageSwitch();
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  // }
 
   handleAppSwitch() {
     this.dispatchEvent(new CustomEvent("appchanged"));
   }
 
-  handleAppKeyUp(event) {
-    if (event.key === "Enter" || event.key === " ") {
-      this.handleAppSwitch();
-      event.preventDefault();
-      event.stopPropagation();
-    }
-  }
+  // handleAppKeyUp(event) {
+  //   if (event.key === "Enter" || event.key === " ") {
+  //     this.handleAppSwitch();
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+  // }
 
-  handleRightPanelToggle(event) {
-    this.isRightPanelExpanded = !this.isRightPanelExpanded;
-    this.#manualColseRightPanel = this.isRightPanelExpanded === false;
-    this.refs.refContentRight.classList.toggle("p-collapsed");
-  }
-
-  handleLeftMenuToggle(event) {
-    this.isLeftMenuExpanded = !this.isLeftMenuExpanded;
-    this.#manualColseLeftMenu = this.isLeftMenuExpanded === false;
-    this.refs.refContentLeft.classList.toggle("p-collapsed");
-  }
-
-  handleLeftNavClick(event) {
-    this.dispatchEvent(
-      new CustomEvent("leftnavclick", {
-        detail: {
-          leftNav: event.detail.leftNav
-        }
-      })
-    );
-  }
+  // handleLeftNavClick(event) {
+  //   this.dispatchEvent(
+  //     new CustomEvent("leftnavclick", {
+  //       detail: {
+  //         leftNav: event.detail.leftNav
+  //       }
+  //     })
+  //   );
+  // }
 }

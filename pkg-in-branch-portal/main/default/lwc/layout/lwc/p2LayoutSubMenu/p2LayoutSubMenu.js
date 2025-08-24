@@ -16,6 +16,7 @@ export default class P2LayoutSubMenu extends mix(LightningElement).with(
 
   @api status = "expanded"; // expanded | collapsed
   _mouseOverToggle = false;
+  #manualCollapse = false;
 
   get i18n() {
     return this.isFrench() ? this.enrichedFr : en;
@@ -59,6 +60,29 @@ export default class P2LayoutSubMenu extends mix(LightningElement).with(
 
   handleToggleClick() {
     if (this.isExpanded) {
+      this.#manualCollapse = true;
+      this.status = "collapsed";
+      this.refs.refSubMenuTopLeft.style.display = "none";
+      this.refs.refSubMenuContent.style.display = "none";
+    } else {
+      this.#manualCollapse = false;
+      this.status = "expanded";
+      this.refs.refSubMenuTopLeft.style.display = "flex";
+      this.refs.refSubMenuContent.style.display = "flex";
+    }
+    this.refs.refSubMenu.classList.toggle("p-expanded", this.isExpanded);
+  }
+
+  @api handleWindowResize(isInitial, toBeCollapsed) {
+    if (this.#manualCollapse) {
+      // keep-as-is
+      return;
+    }
+    if (toBeCollapsed === this.isCollapsed) {
+      // matched already
+      return;
+    }
+    if (toBeCollapsed) {
       this.status = "collapsed";
       this.refs.refSubMenuTopLeft.style.display = "none";
       this.refs.refSubMenuContent.style.display = "none";
