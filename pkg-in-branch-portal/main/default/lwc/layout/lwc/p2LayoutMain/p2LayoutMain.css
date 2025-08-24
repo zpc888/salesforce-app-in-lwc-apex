@@ -108,8 +108,15 @@ li button {
     background-color: var(--p-color-grey-light);
 }
 
+.p-body-main-menu {
+    z-index: 20;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
+}
+
 .p-body-sub-menu {
     max-width: var(--p-sub-menu-width); 
+    z-index: 12;
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
 }
 
 .p-body-utils {
