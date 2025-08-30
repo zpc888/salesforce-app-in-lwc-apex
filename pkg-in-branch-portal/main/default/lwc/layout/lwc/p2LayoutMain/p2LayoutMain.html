@@ -1,12 +1,12 @@
 <template>
    <div class="p-main-layout">
     <section class="p-masthead" role="banner">
-        <section class="p-masthead-brand" lwc:if={isMastheadExpanded}>
-            <div class="p-c-both-center">
+        <section class="p-masthead-brand">
+            <div class="p-c-both-center" lwc:if={isMastheadExpanded}>
                 <img width="50px" height="50px" 
                     src={logoUrl} alt={i18n.logoAlt} />
             </div>
-            <h1 class="p-masthead-brand-title-text">
+            <h1 class="p-masthead-brand-title-text" lwc:if={isMastheadExpanded}>
                 {i18n.projectName}
             </h1>
         </section>

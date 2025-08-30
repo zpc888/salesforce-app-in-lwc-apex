@@ -1,0 +1,39 @@
+@import "c/p2CoStyle";
+
+.p-timeline-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.p-timeline-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--p-color-grey-mid);
+    margin-bottom: 2px;
+
+    &>div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        gap: 6px;
+    }
+}
+
+.p-timeline-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.p-timeline-items {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background: none;
+    border: none;
+}

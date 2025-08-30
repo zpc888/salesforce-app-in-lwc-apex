@@ -193,4 +193,39 @@ export default class PocMainLayout extends mix(LightningElement).with(
   get toggleContentsOverflowOrNot() {
     return this.tooManyContents ? "Shorten" : "Overflow";
   }
+
+  get timelineTitle() {
+    return this.isLangEnglish ? "Timeline" : "Chronologie";
+  }
+
+  get timelineItems() {
+    return [
+      {
+        id: "1",
+        heading: this.isLangEnglish
+          ? "Timeline Item 1"
+          : "Élément de chronologie 1",
+        dateTime: "2023-01-01T00:00:00Z",
+        operatorName: "David Smith",
+        operatorId: "dsmith",
+        comments: "aflsjkflaskj lakjsdf",
+        status: "pending"
+      },
+      {
+        id: "2",
+        heading: this.isLangEnglish
+          ? "Timeline Item 2"
+          : "Élément de chronologie 2",
+        dateTime: "2025-01-01T00:00:00Z",
+        operatorName: "Linda Cheng",
+        operatorId: "lcheng",
+        comments: "Testing laskjf",
+        status: "submit"
+      }
+    ];
+  }
+
+  get utilsExpanded() {
+    return true;
+  }
 }

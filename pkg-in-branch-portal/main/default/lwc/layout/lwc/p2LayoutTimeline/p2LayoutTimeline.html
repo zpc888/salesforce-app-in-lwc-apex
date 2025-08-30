@@ -1,0 +1,29 @@
+<template>
+    <div class="p-timeline-wrapper" lwc:if={hasItems}>
+        <div class="p-timeline-header">
+            <div>
+                <img src={headerImage} alt="" />
+                <div class="p-timeline-title">{title}</div>
+            </div>
+            <div>
+                <button 
+                    aria-expanded={expanded}
+                    aria-controls="pTimelineItems"
+                    aria-label={timelineAriaLabel}
+                    onclick={handleToggleClick}
+                >
+                    <img src={image} alt="" />
+                </button>
+            </div>
+        </div>
+        <div class="p-timeline-items" id="pTimelineItems"
+            if:true={expanded}>
+            <template for:each={items} for:item="item">
+                <c-p2-layout-timeline-item 
+                    key={item.id}
+                    lwc:spread={item}
+                ></c-p2-layout-timeline-item>
+            </template>
+        </div>
+    </div>
+</template>

@@ -171,117 +171,12 @@
             slot="utils"
         >
             <div slot="utilsExpanded" class="poc-utils">
-                <h1>Utility Expanded</h1>
-                <button onclick={handleToggleUtilsOverflow}>{toggleUtilsOverflowOrNot}</button>
-                <p>Utils Expanded 1</p>
-                <p>Utils Expanded 2</p>
-                <p>Utils Expanded 3</p>
-                <p>Utils Expanded 4</p>
-                <p>Utils Expanded 5</p>
-                <template lwc:if={tooManyUtils}>
-                    <p>Utils Expanded 100</p>
-                    <p>Utils Expanded 101</p>
-                    <p>Utils Expanded 102</p>
-                    <p>Utils Expanded 103</p>
-                    <p>Utils Expanded 104</p>
-                    <p>Utils Expanded 105</p>
-                    <p>Utils Expanded 106</p>
-                    <p>Utils Expanded 107</p>
-                    <p>Utils Expanded 108</p>
-                    <p>Utils Expanded 109</p>
-                    <p>Utils Expanded 110</p>
-                    <p>Utils Expanded 111</p>
-                    <p>Utils Expanded 112</p>
-                    <p>Utils Expanded 113</p>
-                    <p>Utils Expanded 114</p>
-                    <p>Utils Expanded 115</p>
-                    <p>Utils Expanded 116</p>
-                    <p>Utils Expanded 117</p>
-                    <p>Utils Expanded 118</p>
-                    <p>Utils Expanded 119</p>
-                    <p>Utils Expanded 120</p>
-                    <p>Utils Expanded 121</p>
-                    <p>Utils Expanded 122</p>
-                    <p>Utils Expanded 123</p>
-                    <p>Utils Expanded 124</p>
-                    <p>Utils Expanded 125</p>
-                    <p>Utils Expanded 126</p>
-                    <p>Utils Expanded 127</p>
-                    <p>Utils Expanded 128</p>
-                    <p>Utils Expanded 129</p>
-                    <p>Utils Expanded 130</p>
-                    <p>Utils Expanded 131</p>
-                    <p>Utils Expanded 132</p>
-                    <p>Utils Expanded 133</p>
-                    <p>Utils Expanded 134</p>
-                    <p>Utils Expanded 135</p>
-                    <p>Utils Expanded 136</p>
-                    <p>Utils Expanded 137</p>
-                    <p>Utils Expanded 138</p>
-                    <p>Utils Expanded 139</p>
-                    <p>Utils Expanded 140</p>
-                    <p>Utils Expanded 141</p>
-                    <p>Utils Expanded 142</p>
-                    <p>Utils Expanded 143</p>
-                    <p>Utils Expanded 144</p>
-                    <p>Utils Expanded 145</p>
-                    <p>Utils Expanded 146</p>
-                    <p>Utils Expanded 147</p>
-                    <p>Utils Expanded 148</p>
-                    <p>Utils Expanded 149</p>
-                    <p>Utils Expanded 150</p>
-                    <p>Utils Expanded 151</p>
-                    <p>Utils Expanded 152</p>
-                    <p>Utils Expanded 153</p>
-                    <p>Utils Expanded 154</p>
-                    <p>Utils Expanded 155</p>
-                    <p>Utils Expanded 156</p>
-                    <p>Utils Expanded 157</p>
-                    <p>Utils Expanded 158</p>
-                    <p>Utils Expanded 159</p>
-                    <p>Utils Expanded 160</p>
-                    <p>Utils Expanded 161</p>
-                    <p>Utils Expanded 162</p>
-                    <p>Utils Expanded 163</p>
-                    <p>Utils Expanded 164</p>
-                    <p>Utils Expanded 165</p>
-                    <p>Utils Expanded 166</p>
-                    <p>Utils Expanded 167</p>
-                    <p>Utils Expanded 168</p>
-                    <p>Utils Expanded 169</p>
-                    <p>Utils Expanded 170</p>
-                    <p>Utils Expanded 171</p>
-                    <p>Utils Expanded 172</p>
-                    <p>Utils Expanded 173</p>
-                    <p>Utils Expanded 174</p>
-                    <p>Utils Expanded 175</p>
-                    <p>Utils Expanded 176</p>
-                    <p>Utils Expanded 177</p>
-                    <p>Utils Expanded 178</p>
-                    <p>Utils Expanded 179</p>
-                    <p>Utils Expanded 180</p>
-                    <p>Utils Expanded 181</p>
-                    <p>Utils Expanded 182</p>
-                    <p>Utils Expanded 183</p>
-                    <p>Utils Expanded 184</p>
-                    <p>Utils Expanded 185</p>
-                    <p>Utils Expanded 186</p>
-                    <p>Utils Expanded 187</p>
-                    <p>Utils Expanded 188</p>
-                    <p>Utils Expanded 189</p>
-                    <p>Utils Expanded 190</p>
-                    <p>Utils Expanded 191</p>
-                    <p>Utils Expanded 192</p>
-                    <p>Utils Expanded 193</p>
-                    <p>Utils Expanded 194</p>
-                    <p>Utils Expanded 195</p>
-                    <p>Utils Expanded 196</p>
-                    <p>Utils Expanded 197</p>
-                    <p>Utils Expanded 198</p>
-                    <p>Utils Expanded 199</p>
-                    <p>Utils Expanded 200</p>
-                    <p>Utils Expanded 201</p>
-                </template>
+                <!-- <button onclick={handleToggleUtilsOverflow}>{toggleUtilsOverflowOrNot}</button> -->
+                <c-p2-layout-timeline
+                    lang-code={langCode}
+                    title={timelineTitle}
+                    items={timelineItems}
+                ></c-p2-layout-timeline>
             </div>
             <div slot="utilsCollapsed" class="poc-utils">
                 <h1>Collapsed</h1>
