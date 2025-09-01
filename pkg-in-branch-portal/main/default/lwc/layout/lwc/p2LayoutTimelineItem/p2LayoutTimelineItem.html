@@ -9,22 +9,22 @@
                 >
                 <img src={image} alt="" />
             </button>
-            <div class="p-timeline-item-heading">{heading}</div>
-            <div class="p-timeline-item-status">{status}</div>
+            <div class="p-timeline-item-heading p-font-h3-title">{heading}</div>
+            <div class="p-timeline-item-status p-font-h3-title" lwc:ref="refStatus">{status}</div>
         </div>
         <div class="p-timeline-item-content" id="pTimelineItemContent"
             lwc:if={expanded}>
             <div class="p-timeline-item" lwc:if={hasDateTime}>
                 <div class="p-timeline-item-divider"></div>
-                <div>{dateTime}</div>
+                <div class="p-font-body-secondary">{dateTime}</div>
             </div>
             <div class="p-timeline-item" lwc:if={hasOperator}>
                 <div class="p-timeline-item-divider"></div>
-                <div>{operator}</div>
+                <div class="p-font-body-secondary">{operator}</div>
             </div>
             <div class="p-timeline-item" lwc:if={hasComments}>
                 <div class="p-timeline-item-divider"></div>
-                <div>{comments}</div>
+                <div class="p-font-body-secondary">{comments}</div>
             </div>
         </div>
     </div>

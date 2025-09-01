@@ -65,6 +65,12 @@ export default class P2LayoutTimelineItem extends mix(LightningElement).with(
       : this.i18n.arialLabelToExpand;
   }
 
+  renderedCallback() {
+    if (this.status === "submit") {
+      this.refs.refStatus.style.backgroundColor = "#CEE5FD";
+    }
+  }
+
   handleToggleClick() {
     this._collapsed = !this._collapsed;
   }

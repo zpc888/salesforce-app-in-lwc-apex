@@ -17,6 +17,13 @@ button {
     grid-template-columns: 30px 2fr 1fr;
 }
 
+.p-timeline-item-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--p-color-green-light);
+}
+
 .p-timeline-item-content {
     display: flex;
     flex-direction: column;
