@@ -7,7 +7,7 @@ import {
 
 const ROOT_ITEM_LEVEL = 0;
 export default class P2LayoutTreeMenu extends LightningElement {
-  @api menuItems = []; // root levels
+  _menuItems = []; // root levels
   /*
     {
         itemKey: 'mandatory - unique across its siblings',
@@ -23,6 +23,15 @@ export default class P2LayoutTreeMenu extends LightningElement {
 
   _flatMenuItems = [];
   _flattenAlready = false;
+
+  @api get menuItems() {
+    return this._menuItems;
+  }
+
+  set menuItems(value) {
+    this._menuItems = value;
+    this._flattenAlready = false; // reset flattening
+  }
 
   handleMenuSelect(event) {
     this.dispatchEvent(
