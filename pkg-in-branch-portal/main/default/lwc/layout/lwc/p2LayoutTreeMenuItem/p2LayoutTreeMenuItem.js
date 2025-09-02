@@ -119,6 +119,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     return this.isSelected || this.isAncestorOfSelection;
   }
 
+  get isSelectedOrRootAncestor() {
+    return this.isSelected || (this.isAncestorOfSelection && this.isLevel0);
+  }
+
   _refresh() {
     if (isEmpty(this.item) || isEmpty(this.selectedKey)) {
       return;
@@ -194,7 +198,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
           ? "p-font-h2-title"
           : "p-font-h3-title"
     );
-    this.refs.refButton.disabled = this.isSelectedOrAncestor;
+    this.refs.refButton.disabled = this.isSelectedOrRootAncestor;
   }
 
   handleSelection() {
