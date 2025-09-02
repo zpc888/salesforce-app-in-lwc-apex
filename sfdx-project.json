@@ -16,8 +16,8 @@
       ]
     },
     {
-      "package": "pkg-in-branch-portal",
-      "path": "pkg-in-branch-portal",
+      "package": "pkg-in-branch-common",
+      "path": "pkg-in-branch-common",
       "default": false,
       "dependencies": [
         {
@@ -37,7 +37,7 @@
           "package": "pkg-digital-portal"
         },
         {
-          "package": "pkg-in-branch-portal"
+          "package": "pkg-in-branch-common"
         }
       ]
     }
