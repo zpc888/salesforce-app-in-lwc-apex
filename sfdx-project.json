@@ -26,6 +26,19 @@
       ]
     },
     {
+      "package": "pkg-in-branch-prod-cat-adm",
+      "path": "pkg-in-branch-prod-cat-adm",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "pkg-common"
+        },
+        {
+          "package": "pkg-in-branch-common"
+        }
+      ]
+    },
+    {
       "package": "pkg-sandbox",
       "path": "pkg-sandbox",
       "default": false,
@@ -38,6 +51,9 @@
         },
         {
           "package": "pkg-in-branch-common"
+        },
+        {
+          "package": "pkg-in-branch-prod-cat-adm"
         }
       ]
     }

@@ -9,10 +9,12 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
   _selectedKey;
 
   itemImg;
+  // icon -- item.iconName
   // textLine1 - item.itemText
   // textLine2 & textLine3 logic is moved into build-tree-menu-item
   // textLine2;  // optional for business structure, roles, or account number, or card number
   // textLine3;  // optional for card type, etc
+  // rootLevelFocusable -- item.focusable
   itemTypeCssSuffix = null;
 
   expandedImg = IMAGES_URL + "/chevron-down.svg";
@@ -119,8 +121,11 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     return this.isSelected || this.isAncestorOfSelection;
   }
 
-  get isSelectedOrRootAncestor() {
-    return this.isSelected || (this.isAncestorOfSelection && this.isLevel0);
+  get isSelectedOrRootAncestorUnfocusable() {
+    return (
+      this.isSelected ||
+      (this.isAncestorOfSelection && this.isLevel0 && !this.item?.focusable)
+    );
   }
 
   _refresh() {
@@ -198,7 +203,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
           ? "p-font-h2-title"
           : "p-font-h3-title"
     );
-    this.refs.refButton.disabled = this.isSelectedOrRootAncestor;
+    this.refs.refButton.disabled = this.isSelectedOrRootAncestorUnfocusable;
   }
 
   handleSelection() {
