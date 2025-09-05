@@ -1,0 +1,14 @@
+@import "c/p2CoStyle";
+
+.p-main-menu-item {
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: 0.625rem;  /* 10px */
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    & > div {
+        line-height: normal;
+    }
+}

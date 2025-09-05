@@ -2,6 +2,8 @@ import { LightningElement } from "lwc";
 import { mix, isNotEmpty } from "c/p0Funcs";
 import { MixinPageBase } from "c/p2WidgetMixin";
 
+import { appMenuItems } from "c/p2CoMainMenuFactory";
+
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
 export default class PocMainLayout extends mix(LightningElement).with(
@@ -11,12 +13,21 @@ export default class PocMainLayout extends mix(LightningElement).with(
   tooManyUtils = false;
   tooManyContents = false;
 
+  appMenuMakr = appMenuItems();
+
   clientImg = IMAGES_URL + "/placeholder-30.svg";
 
   treeMenuSelectedItem = "deposit.depositApp";
 
   currentPage = "Deposit > Deposit Application";
   prevPage = "";
+
+  get mainMenuItems() {
+    return this.appMenuMakr(!this.isLangEnglish, {
+      tasks: { selected: true, notified: false },
+      application: { notified: true }
+    });
+  }
 
   get appInfo() {
     return {

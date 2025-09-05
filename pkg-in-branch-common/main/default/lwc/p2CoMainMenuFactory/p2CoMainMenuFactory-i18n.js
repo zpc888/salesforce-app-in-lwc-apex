@@ -1,4 +1,4 @@
-export const en = {
+export const enAppMenu = {
   leftNavTasks: "Tasks",
   leftNavClient: "Client",
   leftNavApplication: "Application",
@@ -6,7 +6,7 @@ export const en = {
   leftNavReferral: "Referral"
 };
 
-export const fr = {
+export const frAppMenu = {
   leftNavTasks: "Tâches",
   leftNavClient: "Client",
   leftNavApplication: "Demande",

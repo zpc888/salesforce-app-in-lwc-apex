@@ -15,13 +15,9 @@
 .p-left-nav-item {
     width: 5rem;
     height: 5rem;
-    display: grid;
-    grid-template-rows: auto;
-    row-gap: 0.625rem;  /* 10px */
+    display: flex;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    justify-items: center;
     border-radius: 10px;
 }
 
@@ -35,12 +31,13 @@
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><circle r="4" cx="72" cy="8" fill="%23F55" />Sorry, inline svg not supported.</svg>');
 }
 
-.p-left-nav-item-label {
-    line-height: normal;
-}
-
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+button {
+    background: none;
+    border: none;
 }
