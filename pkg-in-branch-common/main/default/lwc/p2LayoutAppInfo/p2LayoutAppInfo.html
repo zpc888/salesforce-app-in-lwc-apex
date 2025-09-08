@@ -4,12 +4,14 @@
         <img class="p-app-info-logo" src={appInfo.imgUrl} alt=""/>
         <h1 class="p-font-h1-title">{appInfo.clientName}</h1>
     </div>
-    <div class="p-app-info-attrs" lwc:if={hasAttrs}>
-        <template for:each={appInfo.attrs} for:item="attr">
-            <div key={attr.label} class="p-app-info-attr">
-                <h3 class="p-font-h3-title">{attr.label}</h3>
-                <div class="p-font-body-regular">{attr.value}</div>
-            </div>
+    <div class="p-app-info-attrs">
+        <template lwc:if={hasAttrs}>
+            <template for:each={appInfo.attrs} for:item="attr">
+                <div key={attr.label} class="p-app-info-attr">
+                    <h3 class="p-font-h3-title">{attr.label}</h3>
+                    <div class="p-font-body-regular">{attr.value}</div>
+                </div>
+            </template>
         </template>
     </div>
    </div> 

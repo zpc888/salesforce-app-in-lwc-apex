@@ -1,0 +1,67 @@
+<template>
+    <c-p2-layout-main
+        user-id = {userId}
+        user-first-name = {userFirstName}
+        user-last-name = {userLastName}
+        user-name = {userName}
+        user-photo-url = {userPhotoUrl}
+        lang-code = {langCode}
+
+        onlanguagechanged={handleLanguageChange}
+    >
+        <c-p2-layout-main-menu
+            slot="mainMenu"
+            lang-code = {langCode}
+            menu-items={mainMenuItems}
+        ></c-p2-layout-main-menu>
+        <c-p2-layout-sub-menu
+            lang-code = {langCode}
+            slot="subMenu"
+        >
+            <c-p2-layout-app-info
+                app-info = {appInfo}
+                slot="subMenuTopLeft"
+            ></c-p2-layout-app-info>
+            <c-p2-layout-tree-menu
+                selected-key={treeMenuSelectedItem}
+                menu-items = {treeMenuItems}
+                onmenuselect={handleMenuSelect}
+                ></c-p2-layout-tree-menu>
+        </c-p2-layout-sub-menu>
+
+
+        <template lwc:if={isAdminProdCat}>
+            <c-p2-prod-cat-adm-prod-cat
+                lang-code={langCode}
+            ></c-p2-prod-cat-adm-prod-cat>
+        </template>
+        <template lwc:elseif={isAdminDeposit}>
+            <c-p2-prod-cat-adm-deposit
+                lang-code={langCode}
+            ></c-p2-prod-cat-adm-deposit>
+        </template>
+        <template lwc:elseif={isAdminLending}>
+            <c-p2-prod-cat-adm-lending
+                lang-code={langCode}
+            ></c-p2-prod-cat-adm-lending>
+        </template>
+        <template lwc:else>
+            <c-p2-layout-content
+                lang-code = {langCode}
+            >
+                Unknown / Unsupported Product Catelogue Administration Section
+            </c-p2-layout-content>
+        </template>
+
+        <c-p2-layout-utils
+            lang-code={langCode}
+            status="collapsed"
+            slot="utils"
+        >
+            <div slot="utilsExpanded" class="poc-utils">
+            </div>
+            <div slot="utilsCollapsed" class="poc-utils">
+            </div>
+        </c-p2-layout-utils>
+    </c-p2-layout-main>
+</template>

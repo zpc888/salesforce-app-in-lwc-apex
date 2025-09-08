@@ -13,3 +13,11 @@ export const frAppMenu = {
   leftNavSigning: "Signature",
   leftNavReferral: "Référence"
 };
+
+export const enAdmMenu = {
+  leftNavProductCatalog: "Product Catalog"
+};
+
+export const frAdmMenu = {
+  leftNavProductCatalog: "Catalogue de produits"
+};

@@ -31,6 +31,7 @@ export default class P2LayoutTreeMenu extends LightningElement {
   set menuItems(value) {
     this._menuItems = value;
     this._flattenAlready = false; // reset flattening
+    // console.log(">>> set menuItems", this._menuItems);
   }
 
   handleMenuSelect(event) {
@@ -62,8 +63,12 @@ export default class P2LayoutTreeMenu extends LightningElement {
         const rootItem = this.menuItems.filter(
           (item) => item.itemKey === this._selectedKey
         );
-        if (rootItem.length === 1 && !rootItem[0].hasContent) {
-          // not allow to click at root level
+        if (
+          rootItem.length === 1 &&
+          !rootItem[0].hasContent &&
+          !rootItem[0].focusable
+        ) {
+          // not allow to click at root level if it is not focusable
           // auto to make the first child clickable
           if (rootItem[0].kids && rootItem[0].kids.length > 0) {
             this._selectedKey =
@@ -87,8 +92,10 @@ export default class P2LayoutTreeMenu extends LightningElement {
       //   JSON.stringify(this._flatMenuItems, null, 2)
       // );
       this._flattenAlready = true;
+      // console.log(">>> set menuItems", this._flatMenuItems);
       return this._flatMenuItems;
     } else {
+      // console.log(">>> set menuItems", "return empty");
       return [];
     }
   }

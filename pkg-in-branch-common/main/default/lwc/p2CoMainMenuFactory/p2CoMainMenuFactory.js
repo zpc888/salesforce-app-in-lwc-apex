@@ -1,7 +1,37 @@
 import { deepMerge } from "c/p0Funcs";
 
-import { enAppMenu, frAppMenu } from "./p2CoMainMenuFactory-i18n";
+import {
+  enAppMenu,
+  frAppMenu,
+  enAdmMenu,
+  frAdmMenu
+} from "./p2CoMainMenuFactory-i18n";
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
+
+export function adminMenuItems() {
+  const enrichedFr = deepMerge(frAdmMenu, enAdmMenu);
+
+  const prodCatImg = IMAGES_URL + "/placeholder-40.svg";
+  const prodCatSelectedImg = IMAGES_URL + "/placeholder-40.svg";
+
+  return (isFrench, opts) => {
+    const i18n = isFrench ? enrichedFr : enAdmMenu;
+    const optConfig = (itemName, prop) =>
+      opts && opts[itemName] && opts[itemName][prop]
+        ? opts[itemName][prop]
+        : false;
+    return [
+      {
+        name: "productCatalog",
+        label: i18n.leftNavProductCatalog,
+        img: prodCatImg,
+        selectedImg: prodCatSelectedImg,
+        selected: optConfig("productCatalog", "selected"),
+        notified: optConfig("productCatalog", "notified")
+      }
+    ];
+  };
+}
 
 export function appMenuItems() {
   const enrichedFr = deepMerge(frAppMenu, enAppMenu);

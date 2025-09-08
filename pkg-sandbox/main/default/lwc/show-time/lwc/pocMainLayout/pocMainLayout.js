@@ -13,7 +13,7 @@ export default class PocMainLayout extends mix(LightningElement).with(
   tooManyUtils = false;
   tooManyContents = false;
 
-  appMenuMakr = appMenuItems();
+  appMenuMaker = appMenuItems();
 
   clientImg = IMAGES_URL + "/placeholder-30.svg";
 
@@ -23,7 +23,7 @@ export default class PocMainLayout extends mix(LightningElement).with(
   prevPage = "";
 
   get mainMenuItems() {
-    return this.appMenuMakr(!this.isLangEnglish, {
+    return this.appMenuMaker(!this.isLangEnglish, {
       tasks: { selected: true, notified: false },
       application: { notified: true }
     });

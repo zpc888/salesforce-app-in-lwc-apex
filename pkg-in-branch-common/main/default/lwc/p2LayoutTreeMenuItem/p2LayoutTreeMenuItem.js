@@ -129,6 +129,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
   }
 
   _refresh() {
+    // console.log(">>> _refresh", this.item, this.selectedKey);
     if (isEmpty(this.item) || isEmpty(this.selectedKey)) {
       return;
     }
@@ -158,6 +159,13 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     if (this.isLevel0) {
       this.itemImg = null;
       // no image for first level
+      if (this.item.itemType === "prodCat") {
+        this.itemImg =
+          IMAGES_URL +
+          (this.isSelectedOrAncestor
+            ? "/object-structure.svg"
+            : "/object-structure.svg");
+      }
     } else if (this.isLevel1) {
       if (
         this.item.itemType === "depositApp" ||
@@ -180,6 +188,8 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
           (this.isSelectedOrAncestor
             ? "/menu-manual-review-selected.svg"
             : "/menu-manual-review.svg");
+      } else if (this.item.isLeaf && this.hasNoKids) {
+        this.itemImg = IMAGES_URL + "/menu-leaf-icon.svg";
       }
     } else if (this.isLevel2) {
       this.itemImg = IMAGES_URL + "/menu-leaf-icon.svg";

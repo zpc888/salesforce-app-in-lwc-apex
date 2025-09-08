@@ -53,6 +53,8 @@ export function buildFlatMenus(listCollector, parentKey, item, index, level) {
     itemText: item.itemText,
     itemType: item.itemType,
     status: item.status,
+    focusable: item.focusable,
+    isLeaf: item.isLeaf,
     ...parseItemData(item),
     hasKids
   });
