@@ -67,6 +67,8 @@ export default class PocMainLayout extends mix(LightningElement).with(
             itemText: this.isLangEnglish
               ? "Deposit Application"
               : "Application de dépôt",
+            itemImg: IMAGES_URL + "/menu-package.svg",
+            itemImgSelected: IMAGES_URL + "/menu-package-selected.svg",
             itemType: "depositApp",
             status: "pending",
             kids: Array.from({ length: 4 }, (_, i) => i + 1).map((i) => ({
@@ -91,6 +93,8 @@ export default class PocMainLayout extends mix(LightningElement).with(
               ? "Debit Card Application"
               : "Application de carte de débit",
             itemType: "cardApp",
+            itemImg: IMAGES_URL + "/menu-card.svg",
+            itemImgSelected: IMAGES_URL + "/menu-card-selected.svg",
             status: "pending",
             kids: Array.from({ length: 3 }, (_, i) => i + 1).map((i) => ({
               itemKey: "debitCardProd" + i,
@@ -107,6 +111,8 @@ export default class PocMainLayout extends mix(LightningElement).with(
               ? "Manual Review Request"
               : "Demande de révision manuelle",
             itemType: "manualReview",
+            itemImg: IMAGES_URL + "/menu-manual-review.svg",
+            itemImgSelected: IMAGES_URL + "/menu-manual-review-selected.svg",
             status: "ok"
           }
         ]
@@ -123,6 +129,8 @@ export default class PocMainLayout extends mix(LightningElement).with(
               ? "Lending Application"
               : "Application de prêt",
             itemType: "lendingApp",
+            itemImg: IMAGES_URL + "/menu-package.svg",
+            itemImgSelected: IMAGES_URL + "/menu-package-selected.svg",
             status: "pending",
             kids: Array.from({ length: 120 }, (_, i) => i + 1).map((i) => ({
               itemKey: "lendingProd" + i,
@@ -147,6 +155,8 @@ export default class PocMainLayout extends mix(LightningElement).with(
               ? "Credit Card Package"
               : "Forfait de carte de crédit",
             itemType: "creditCardPkg",
+            itemImg: IMAGES_URL + "/menu-card.svg",
+            itemImgSelected: IMAGES_URL + "/menu-card-selected.svg",
             status: "pending",
             kids: Array.from({ length: 3 }, (_, i) => i + 1).map((i) => ({
               itemKey: "creditCardProd" + i,

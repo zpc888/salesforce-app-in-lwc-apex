@@ -28,6 +28,10 @@ button {
     border: none;
 }
 
+button.p-is-hidden {
+    display: none;
+}
+
 .p-tree-menu-level1 {
     margin-top: 5px;
     padding-left: 6px;

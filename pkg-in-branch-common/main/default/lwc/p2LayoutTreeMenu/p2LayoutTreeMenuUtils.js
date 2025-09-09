@@ -51,10 +51,12 @@ export function buildFlatMenus(listCollector, parentKey, item, index, level) {
     nestedLevel: level,
     iconName: item.iconName,
     itemText: item.itemText,
+    itemImg: item.itemImg,
+    itemImgSelected: item.itemImgSelected,
     itemType: item.itemType,
     status: item.status,
+    isHidden: item.isHidden,
     focusable: item.focusable,
-    isLeaf: item.isLeaf,
     ...parseItemData(item),
     hasKids
   });

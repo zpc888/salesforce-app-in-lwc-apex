@@ -1,6 +1,6 @@
 import { LightningElement, api } from "lwc";
 
-import { isNotEmpty, isEmpty } from "c/p0Funcs";
+import { isNotEmpty, isEmpty, isTrue } from "c/p0Funcs";
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
 const ROOT_ITEM_LEVEL = 0;
@@ -8,7 +8,6 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
   _item;
   _selectedKey;
 
-  itemImg;
   // icon -- item.iconName
   // textLine1 - item.itemText
   // textLine2 & textLine3 logic is moved into build-tree-menu-item
@@ -30,12 +29,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
 
   set item(value) {
     this._item = value;
-    this._refresh();
   }
 
   set selectedKey(value) {
     this._selectedKey = value;
-    this._refresh();
   }
 
   get hasItemImg() {
@@ -85,6 +82,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     return this.item?.status === "pending";
   }
 
+  get isHidden() {
+    return isTrue(this.item?.isHidden);
+  }
+
   get isOkStatus() {
     return this.item?.status === "ok";
   }
@@ -128,34 +129,27 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
     );
   }
 
+  get itemImg() {
+    if (this.item) {
+      const ret = this.isSelectedOrAncestor
+        ? this.item.itemImgSelected
+        : this.item.itemImg;
+      if (this.isLevel2 && isEmpty(ret)) {
+        return IMAGES_URL + "/menu-leaf-icon.svg";
+      } else {
+        return ret;
+      }
+    } else {
+      return null;
+    }
+  }
+
+  /*
   _refresh() {
     // console.log(">>> _refresh", this.item, this.selectedKey);
     if (isEmpty(this.item) || isEmpty(this.selectedKey)) {
       return;
     }
-    /*
-    if (this.item.itemType === "client") {
-      this.itemTypeCssSuffix = "client";
-    } else if (this.item.itemType === "businessClient") {
-      this.itemTypeCssSuffix = "business-client";
-      this.itemImg = IMAGES_URL + "/tree_menu_business_client.svg";
-    } else if (this.item.itemType === "personalClient") {
-      this.itemTypeCssSuffix = "personal-client";
-      this.itemImg = IMAGES_URL + "/tree_menu_personal_client.svg";
-    } else if (this.item.itemType === "depositApp") {
-      this.itemTypeCssSuffix = "deposit-app";
-    } else if (this.item.itemType === "lendingApp") {
-      this.itemTypeCssSuffix = "lending-app";
-    } else if (this.item.itemType === "depositProd") {
-      this.itemTypeCssSuffix = "deposit-prod";
-      this.itemImg = IMAGES_URL + "/tree_menu_deposit_prod.svg";
-    } else if (this.item.itemType === "lendingProd") {
-      this.itemTypeCssSuffix = "lending-prod";
-      this.itemImg = IMAGES_URL + "/tree_menu_lending_prod.svg";
-    } else {
-      //   throw new Error("Unknown item type" + this.item.itemType);
-    }
-      */
     if (this.isLevel0) {
       this.itemImg = null;
       // no image for first level
@@ -195,8 +189,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
       this.itemImg = IMAGES_URL + "/menu-leaf-icon.svg";
     }
   }
+  */
 
   renderedCallback() {
+    this.refs.refButton.classList.toggle("p-is-Hidden", this.isHidden);
     this.refs.refStatus.classList.toggle(
       "p-tree-menu-is-pending",
       this.isPendingStatus

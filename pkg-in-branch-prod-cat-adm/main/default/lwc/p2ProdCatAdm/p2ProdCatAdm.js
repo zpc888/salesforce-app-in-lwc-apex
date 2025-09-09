@@ -14,11 +14,11 @@ export default class P2ProdCatAdm extends mix(LightningElement).with(
   _appAdmImg = IMAGES_URL + "/placeholder-30.svg";
   prodCatImg = IMAGES_URL + "/object-structure.svg";
   enrichedFr = deepMerge(fr, en);
-  treeMenuSelectedItem = "productCatalog";
+  treeMenuSelectedItem = "admin.productCatalog";
 
   get mainMenuItems() {
     return this.adminMenuMaker(!this.isLangEnglish, {
-      tasks: { productCatalog: true, notified: false }
+      productCatalog: { selected: true, notified: false }
     });
   }
 
@@ -27,15 +27,15 @@ export default class P2ProdCatAdm extends mix(LightningElement).with(
   }
 
   get isAdminProdCat() {
-    return this.treeMenuSelectedItem === "productCatalog";
+    return this.treeMenuSelectedItem === "admin.productCatalog";
   }
 
   get isAdminDeposit() {
-    return this.treeMenuSelectedItem === "productCatalog.deposit";
+    return this.treeMenuSelectedItem === "admin.productCatalog.deposit";
   }
 
   get isAdminLending() {
-    return this.treeMenuSelectedItem === "productCatalog.lending";
+    return this.treeMenuSelectedItem === "admin.productCatalog.lending";
   }
 
   get appInfo() {
@@ -49,22 +49,31 @@ export default class P2ProdCatAdm extends mix(LightningElement).with(
   get treeMenuItems() {
     const ret = [
       {
-        itemKey: "productCatalog",
-        itemText: this.i18n.treeMenuProdCat,
-        itemType: "prodCat",
-        focusable: true,
+        itemKey: "admin",
+        itemText: this.i18n.treeMenuAdmin,
+        itemType: "admin",
+        isHidden: true,
         kids: [
           {
-            itemKey: "deposit",
-            itemText: this.i18n.treeMenuDepositCat,
-            itemType: "depositCat",
-            isLeaf: true
-          },
-          {
-            itemKey: "lending",
-            itemText: this.i18n.treeMenuLendingCat,
-            itemType: "lendingCat",
-            isLeaf: true
+            itemKey: "productCatalog",
+            itemText: this.i18n.treeMenuProdCat,
+            itemType: "prodCat",
+            itemImg: IMAGES_URL + "/object-structure.svg",
+            itemImgSelected: IMAGES_URL + "/object-structure.svg",
+            kids: [
+              {
+                itemKey: "deposit",
+                itemText: this.i18n.treeMenuDepositCat,
+                itemType: "depositCat",
+                isLeaf: true
+              },
+              {
+                itemKey: "lending",
+                itemText: this.i18n.treeMenuLendingCat,
+                itemType: "lendingCat",
+                isLeaf: true
+              }
+            ]
           }
         ]
       }
