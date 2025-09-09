@@ -1,4 +1,7 @@
 <template>
+    <template lwc:if={needsDivider}>
+        <div class="p-tree-menu-divider"></div>
+    </template>
     <button lwc:ref="refButton" 
             class={cssClass} 
             onclick={handleSelection} 

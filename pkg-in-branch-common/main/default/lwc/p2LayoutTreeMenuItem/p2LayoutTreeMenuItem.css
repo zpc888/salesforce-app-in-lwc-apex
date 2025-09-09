@@ -23,6 +23,25 @@
     height: 40px;
 }
 
+.p-tree-menu-divider {
+    margin: 5px 0 10px 0;
+    height: 1px;
+    background-color: var(--p-color-grey-mid);
+    width: 100%;
+}
+
+/* 
+.p-tree-menu-level0:not(:first-child)::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, #4a6fa5 20%, rgba(74, 111, 165, 0.3) 100%);
+    z-index: 2;
+} */
+
 button {
     background: none;
     border: none;

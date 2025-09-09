@@ -19,6 +19,10 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
   expandedImg = IMAGES_URL + "/chevron-down.svg";
   collapsedImg = IMAGES_URL + "/chevron-up.svg";
 
+  get needsDivider() {
+    return this.isLevel0 && this.item?.needsDivider;
+  }
+
   @api get item() {
     return this._item;
   }
@@ -192,7 +196,7 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
   */
 
   renderedCallback() {
-    this.refs.refButton.classList.toggle("p-is-Hidden", this.isHidden);
+    this.refs.refButton.classList.toggle("p-is-hidden", this.isHidden);
     this.refs.refStatus.classList.toggle(
       "p-tree-menu-is-pending",
       this.isPendingStatus
