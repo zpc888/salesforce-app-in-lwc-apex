@@ -29,6 +29,8 @@ export default class P2MainLayout extends mix(LightningElement).with(
   @api leftNavObject = {};
   @api appSummaryObject = {};
 
+  @api otherApps = [];
+
   enrichedFr = deepMerge(fr, en);
 
   #manualColseLeftMenu = false;
@@ -37,11 +39,20 @@ export default class P2MainLayout extends mix(LightningElement).with(
   #widowWidth = window.innerWidth;
   #resizeHandler = null;
 
-  switchAppIconUrl = `${IMAGES_URL}/action-exit.svg`;
+  exitAppIconUrl = `${IMAGES_URL}/action-exit.svg`;
   logoUrl = `${IMAGES_URL}/placeholder-50.svg`;
 
   get i18n() {
     return this.isFrench() ? this.enrichedFr : en;
+  }
+
+  get canAccessMoreApps() {
+    const ret =
+      isNotEmpty(this.otherApps) &&
+      this.otherApps.length &&
+      this.otherApps.length > 0;
+    // console.log("can access more apps: " + ret, JSON.stringify(this.otherApps));
+    return ret;
   }
 
   get hasUserPhoto() {
@@ -130,8 +141,41 @@ export default class P2MainLayout extends mix(LightningElement).with(
   //   }
   // }
 
-  handleAppSwitch() {
-    this.dispatchEvent(new CustomEvent("appchanged"));
+  handleAppExit() {
+    this.dispatchEvent(
+      new CustomEvent("appswitch", {
+        detail: {
+          url: "pocShowcase",
+          appName: "pocShowCase"
+        }
+      })
+    );
+  }
+
+  // toggleAppSwitch() {
+  //   console.log(
+  //     "toggle app switch: ",
+  //     this.refs.refAppSwitchDropdown.classList.contains("active")
+  //   );
+  //   this.refs.refAppSwitchDropdown.classList.toggle("active");
+  // }
+
+  handleAppSwitch(event) {
+    const url = event.currentTarget.getAttribute("data-url");
+    const appName = event.currentTarget.getAttribute("data-app-name");
+    // console.log("switching to app: " + url, appName);
+    if (url) {
+      // window.location.href = url;
+      this.dispatchEvent(
+        new CustomEvent("appswitch", {
+          detail: {
+            url,
+            appName
+          }
+        })
+      );
+    }
+    // console.log("app switch event dispatched");
   }
 
   // handleAppKeyUp(event) {

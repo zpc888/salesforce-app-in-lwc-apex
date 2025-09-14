@@ -50,17 +50,48 @@
                     </div>
                 </li>
                 <li>
-                    <button
-                        class="p-masthead-action"
-                        onclick={handleAppSwitch}
-                    >
-                        <span class="p-c-both-center">
-                            <img src={switchAppIconUrl} alt="" />
-                        </span>
-                        <span class="p-c-both-center p-font-masthead-title">
-                            {i18n.switchAppButton}
-                        </span>
+                    <template lwc:if={canAccessMoreApps}>
+        <div class="p-dropdown" lwc:ref="refAppSwitchDropdown">
+            <!-- <button class="p-dropdown-link p-font-masthead-title"
+                onclick={toggleAppSwitch}> -->
+            <button class="p-dropdown-link p-font-masthead-title">
+                {i18n.switchAppButton}
+            </button>
+            <div class="p-dropdown-menu">
+                <div class="p-dropdown-item">
+                    <template for:each={otherApps} for:item="appMenu">
+                        <button 
+                            key={appMenu.name} 
+                            onclick={handleAppSwitch} 
+                            data-url={appMenu.url} 
+                            data-app-name={appMenu.name} 
+                            class="p-dropdown-link p-font-masthead-title">
+                            {appMenu.label}
+                        </button>
+                    </template>
+                    <span></span>
+                    <button 
+                        onclick={handleAppExit} 
+                        class="p-dropdown-link p-font-masthead-title">
+                        {i18n.exitAppButton}
                     </button>
+                </div>
+            </div>
+        </div>
+        </template>
+                    <template lwc:else>
+                        <button
+                            class="p-masthead-action"
+                            onclick={handleAppExit}
+                        >
+                            <span class="p-c-both-center">
+                                <img src={exitAppIconUrl} alt="" />
+                            </span>
+                            <span class="p-c-both-center p-font-masthead-title">
+                                {i18n.exitAppButton}
+                            </span>
+                        </button>
+                    </template>
                 </li>
             </ul>
         </section>

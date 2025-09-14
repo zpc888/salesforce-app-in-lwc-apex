@@ -2,12 +2,14 @@ export const en = {
   logoAlt: "Logo",
   projectName: "Symphony",
   switchLanguageButton: "Français",
-  switchAppButton: "Exit"
+  exitAppButton: "Exit",
+  switchAppButton: "Switch App"
 };
 
 export const fr = {
   logoAlt: "Logo (FR)",
   projectName: "Symphony (FR)",
   switchLanguageButton: "English",
-  switchAppButton: "Exit (FR)"
+  exitAppButton: "Quitter",
+  switchAppButton: "Changer d'app"
 };

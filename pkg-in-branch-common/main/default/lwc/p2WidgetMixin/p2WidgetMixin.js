@@ -76,6 +76,22 @@ export const MixinPageBase = (Base) =>
         });
     }
 
+    handleAppSwitchEvent(event) {
+      const { url, appName } = event.detail;
+      console.log("app switch event handling...", url, appName);
+      if (url) {
+        this[NavigationMixin.Navigate]({
+          type: "standard__component",
+          attributes: {
+            componentName: "c__" + url
+          },
+          state: {
+            c__appName: appName
+          }
+        });
+      }
+    }
+
     @wire(CurrentPageReference)
     setPageReference(pageRef) {
       if (pageRef && pageRef.state && pageRef.state.c__accountId) {

@@ -1,4 +1,6 @@
 import { LightningElement } from "lwc";
+import { NavigationMixin } from "lightning/navigation";
+
 import { mix, deepMerge } from "c/p0Funcs";
 import { MixinPageBase } from "c/p2WidgetMixin";
 
@@ -15,6 +17,22 @@ export default class P2ProdCatAdm extends mix(LightningElement).with(
   prodCatImg = IMAGES_URL + "/object-structure.svg";
   enrichedFr = deepMerge(fr, en);
   treeMenuSelectedItem = "admin.productCatalog";
+
+  get otherApps() {
+    // url: "/lightning/cmp/c__p2Application"
+    return [
+      {
+        name: "AdvisorPortal",
+        label: this.i18n.advisorPortalAppLabel,
+        url: "p2Application"
+      },
+      {
+        name: "PocLayout",
+        label: this.i18n.pocMainLayoutAppLabel,
+        url: "pocMainLayout"
+      }
+    ];
+  }
 
   get mainMenuItems() {
     return this.adminMenuMaker(!this.isLangEnglish, {
