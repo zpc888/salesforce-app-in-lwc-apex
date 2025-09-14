@@ -1,15 +1,14 @@
 import { LightningElement } from "lwc";
-import { NavigationMixin } from "lightning/navigation";
 
 import { mix, deepMerge } from "c/p0Funcs";
 import { MixinPageBase } from "c/p2WidgetMixin";
 
 import { adminMenuItems } from "c/p2CoMainMenuFactory";
-import { en, fr } from "./p2ProdCatAdm-i18n";
+import { en, fr } from "./p2AdminProdCat-i18n";
 
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
-export default class P2ProdCatAdm extends mix(LightningElement).with(
+export default class P2AdminProdCat extends mix(LightningElement).with(
   MixinPageBase
 ) {
   adminMenuMaker = adminMenuItems();
@@ -19,12 +18,12 @@ export default class P2ProdCatAdm extends mix(LightningElement).with(
   treeMenuSelectedItem = "admin.productCatalog";
 
   get otherApps() {
-    // url: "/lightning/cmp/c__p2Application"
+    // url: "/lightning/cmp/c__p2OnboardProd"
     return [
       {
         name: "AdvisorPortal",
         label: this.i18n.advisorPortalAppLabel,
-        url: "p2Application"
+        url: "p2OnboardProd"
       },
       {
         name: "PocLayout",

@@ -6,7 +6,7 @@ export default class PocShowcase extends LightningElement {
     { name: "Colors", comp: "pocColors" },
     { name: "Icons", comp: "pocIcons" },
     { name: "Main Layout", comp: "pocMainLayout" },
-    { name: "Admin", comp: "p2ProdCatAdm" }
+    { name: "Admin", comp: "p2AdminProdCat" }
   ];
 
   async handleShowItemClick(event) {

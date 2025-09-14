@@ -32,36 +32,22 @@
                 ></c-p2-layout-tree-menu>
         </c-p2-layout-sub-menu>
 
-
-        <template lwc:if={isAdminProdCat}>
-            <c-p2-prod-cat-adm-prod-cat
-                lang-code={langCode}
-            ></c-p2-prod-cat-adm-prod-cat>
-        </template>
-        <template lwc:elseif={isAdminDeposit}>
-            <c-p2-prod-cat-adm-deposit
-                lang-code={langCode}
-            ></c-p2-prod-cat-adm-deposit>
-        </template>
-        <template lwc:elseif={isAdminLending}>
-            <c-p2-prod-cat-adm-lending
-                lang-code={langCode}
-            ></c-p2-prod-cat-adm-lending>
-        </template>
-        <template lwc:else>
-            <c-p2-layout-content
-                lang-code = {langCode}
-            >
-                Unknown / Unsupported Product Catelogue Administration Section
-            </c-p2-layout-content>
-        </template>
+        <c-p2-layout-content
+            lang-code = {langCode}
+        >
+            Onboarding Product Apply Page / (Fr)
+        </c-p2-layout-content>
 
         <c-p2-layout-utils
             lang-code={langCode}
-            status="collapsed"
             slot="utils"
         >
             <div slot="utilsExpanded" class="poc-utils">
+                <c-p2-layout-timeline
+                    lang-code={langCode}
+                    title={timelineTitle}
+                    items={timelineItems}
+                ></c-p2-layout-timeline>                
             </div>
             <div slot="utilsCollapsed" class="poc-utils">
             </div>

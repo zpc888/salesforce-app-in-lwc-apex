@@ -26,8 +26,21 @@
       ]
     },
     {
-      "package": "pkg-in-branch-prod-cat-adm",
-      "path": "pkg-in-branch-prod-cat-adm",
+      "package": "pkg-in-branch-onboard-prod",
+      "path": "pkg-in-branch-onboard-prod",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "pkg-common"
+        },
+        {
+          "package": "pkg-in-branch-common"
+        }
+      ]
+    },
+    {
+      "package": "pkg-in-branch-admin-prod-cat",
+      "path": "pkg-in-branch-admin-prod-cat",
       "default": false,
       "dependencies": [
         {
@@ -53,7 +66,7 @@
           "package": "pkg-in-branch-common"
         },
         {
-          "package": "pkg-in-branch-prod-cat-adm"
+          "package": "pkg-in-branch-admin-prod-cat"
         }
       ]
     }
