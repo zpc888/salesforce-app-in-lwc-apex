@@ -10,4 +10,26 @@
     align-items: center;
 }
 
+/* 
+slot attr selector cannot distinguish between 
+having/having not content for uitlsCollapsed
+*/
+/* [slot="utilsCollapsed"],
+[slot="utilsExpanded"] { */
+.p-slot-utils {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 0.4rem;    /* 6px */
+}
 
+/* horizontal button group */
+.p2-button-group-h {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3125rem;
+
+    & button {
+        background: none;
+        border: none;
+    }
+}

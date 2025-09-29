@@ -1,22 +1,4 @@
-.poc-utils {
-    background-color: #FFFFFF;
-    border-radius: 4px;
-    padding: 0.4rem;    /* 6px */
-}
-
-/* .poc-tree-menu { */
-    /* padding: 0 0.4rem 0.4rem 0.4rem; */    /* 6px */
-/* } */
-
-.poc-utils-expanded {
-    flex-shrink: 0;
-    z-index: 5;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0 0.625rem; /* 10px */
-}
+@import "c/p2CoStyle";
 
 .poc-content-main {
     background-color: var(--p-color-white);

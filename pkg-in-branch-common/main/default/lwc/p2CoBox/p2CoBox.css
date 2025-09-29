@@ -1,0 +1,30 @@
+@import "c/p2CoStyle";
+
+.p-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--p-color-white);
+    padding: 1rem 0;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.p-box-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.p-box-body:empty,
+.p-box-footer:empty {
+    display: none;
+}
+
+/* 
+.p-box-footer:not(:has(*)) {
+    display: none;
+} */

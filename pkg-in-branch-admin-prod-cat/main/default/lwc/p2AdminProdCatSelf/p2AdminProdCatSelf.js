@@ -13,6 +13,6 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
   enrichedFr = deepMerge(fr, en);
 
   get i18n() {
-    return !this.isLangEnglish ? this.enrichedFr : en;
+    return this.isFrench() ? this.enrichedFr : en;
   }
 }

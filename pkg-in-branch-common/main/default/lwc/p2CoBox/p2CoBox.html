@@ -1,0 +1,21 @@
+<template>
+    <div class="p-box">
+        <div class="p-box-header">
+            <div>
+                <img src={boxHeaderIcon} alt="" />
+            </div>
+            <div>
+                <h2 class="p-font-h2-title">{boxTitle}</h2>
+            </div>
+            <div>
+                <slot name="boxHeaderActions"></slot>
+            </div>
+        </div>
+        <div class="p-box-body">
+            <slot></slot>
+        </div>
+        <div class="p-box-footer">
+            <slot name="boxFooter"></slot>
+        </div>
+    </div>
+</template>

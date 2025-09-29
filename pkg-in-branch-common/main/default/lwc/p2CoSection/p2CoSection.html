@@ -1,0 +1,30 @@
+<template>
+    <div class="p-section">
+        <div class="p-section-header">
+            <div>
+                <img src={sectionHeaderIcon} alt="" />
+            </div>
+            <div>
+                <h2 class="p-font-h2-title">{sectionTitle}</h2>
+                <p lwc:if={hasSubtitle} class="p-font-body-secondary">{sectionSubtitle}</p>
+            </div>
+            <div>
+                <slot name="sectionHeaderActions"></slot>
+            </div>
+            <div>
+                <button
+                    aria-controls="pSectionBody"
+                    aria-expanded={isExpanded}
+                    aria-label={toggleAriaLabel}
+                    onclick={toggleSection}
+                    lwc:if={hasToggle}
+                >
+                    <img src={toggleIcon} alt="" />
+                </button>
+            </div>
+        </div>
+        <div class="p-section-body" id="pSectionBody" lwc:if={isBodyVisible}>
+            <slot></slot>
+        </div>
+    </div>
+</template>

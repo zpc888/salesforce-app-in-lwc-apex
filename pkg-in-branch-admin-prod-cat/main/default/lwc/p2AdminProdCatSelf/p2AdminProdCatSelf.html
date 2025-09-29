@@ -3,14 +3,36 @@
         lang-code={langCode}
     >
         <div slot="contentTop" class="p2-content-top">
-            <h1>Product Catalogue Ordering</h1>
+            <h1 class="p-font-h1-title">{i18n.productCat}</h1>
         </div>
         <div class="p2-content-main">
-            <div>Deposit</div>
-            <div>Lending</div>
+            <c-p2-co-section
+                    class="p2-section-instance"
+                    section-title={i18n.sectionTitle}
+                    section-subtitle={i18n.sectionSubtitle}
+                    lang-code={langCode}>
+                <c-p2-co-box
+                        box-title={i18n.deposit}
+                        lang-code={langCode}>
+                    <div slot="boxHeaderActions" class="p2-button-group-h">
+                        <button class="p-font-action-button-link">Move up</button>
+                        <button class="p-font-action-button-link">Move down</button>
+                        <button class="p-font-action-button-link">Edit</button>
+                    </div>
+                </c-p2-co-box>
+                <c-p2-co-box
+                        box-title={i18n.lending}
+                        lang-code={langCode}>
+                    <div slot="boxHeaderActions" class="p2-button-group-h">
+                        <button class="p-font-action-button-link">Move up</button>
+                        <button class="p-font-action-button-link">Move down</button>
+                        <button class="p-font-action-button-link">Edit</button>
+                    </div>
+                </c-p2-co-box>
+            </c-p2-co-section>
         </div>
         <div slot="contentBottom" class="p2-content-bottom">
-            <h1>Product Catalogue Actions List</h1>
+            <button>{i18n.save}</button>
         </div>
     </c-p2-layout-content>
 </template>
