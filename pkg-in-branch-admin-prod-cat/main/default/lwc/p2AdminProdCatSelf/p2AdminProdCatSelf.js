@@ -9,6 +9,9 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
   MixinLangAware
 ) {
   _prodCatAdmImg = IMAGES_URL + "/placeholder-30.svg";
+  moveUpIcon = IMAGES_URL + "/action-move-up.svg";
+  moveDownIcon = IMAGES_URL + "/action-move-down.svg";
+  editIcon = IMAGES_URL + "/action-edit.svg";
 
   enrichedFr = deepMerge(fr, en);
 
