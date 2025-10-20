@@ -49,6 +49,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     if (newIndex < 0 || newIndex >= this.prodCatObjects.length) {
       return;
     }
+    console.log(`drag and drop 0: Reorder from ${index} to ${newIndex}`);
     const item = this.prodCatObjects.splice(index, 1)[0];
     this.prodCatObjects.splice(newIndex, 0, item);
     // trigger re-render
@@ -63,5 +64,17 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
         label: this.i18n[id]
       };
     });
+  }
+
+  handleReorder(event) {
+    const { fromIndex, toIndex } = event.detail;
+    console.log(`drag and drop: Reorder from ${fromIndex} to ${toIndex}`);
+    if (fromIndex === toIndex) return;
+
+    const item = this.prodCatObjects.splice(fromIndex, 1)[0];
+    this.prodCatObjects.splice(toIndex, 0, item);
+    // trigger re-render
+    this.prodCatObjects = [...this.prodCatObjects];
+    this.prodCatIdList = this.prodCatObjects.map((obj) => obj.id);
   }
 }

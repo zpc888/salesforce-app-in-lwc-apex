@@ -23,8 +23,11 @@
                 </button>
             </div>
         </div>
-        <div class="p-section-body" id="pSectionBody" lwc:if={isBodyVisible}>
-            <slot></slot>
+        <div class="p-section-body" id="pSectionBody" 
+                ondrop={handleContainerDrop} 
+                ondragover={handleContainerDragOver}
+                lwc:if={isBodyVisible}>
+            <slot onslotchange={handleSlotChange}></slot>
         </div>
     </div>
 </template>

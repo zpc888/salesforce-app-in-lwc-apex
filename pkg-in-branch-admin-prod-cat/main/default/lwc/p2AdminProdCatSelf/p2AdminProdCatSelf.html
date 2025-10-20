@@ -10,10 +10,12 @@
                     class="p2-section-instance"
                     section-title={i18n.sectionTitle}
                     section-subtitle={i18n.sectionSubtitle}
+                    onreorder={handleReorder}
                     lang-code={langCode}>
                 <template for:each={prodCatObjects} for:item="prodCat">
                     <c-p2-co-box
                             key={prodCat.id}
+                            class="p-dnd"
                             box-title={prodCat.label}
                             lang-code={langCode}>
                         <div slot="boxHeaderActions" class="p2-button-group-h">
