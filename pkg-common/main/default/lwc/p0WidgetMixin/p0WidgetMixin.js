@@ -19,7 +19,20 @@ export const MixinLangAware = (superclass) =>
      * @default 'en'
      * @memberof module:pkg-common/core/widgets~MixinWidgetLangAware
      */
-    @api langCode = "en";
+    _langCode = "en";
+
+    @api get langCode() {
+      return this._langCode;
+    }
+
+    set langCode(v) {
+      this._langCode = v;
+      this.langCodeChanged(v);
+    }
+
+    langCodeChanged(newLangCode) {
+      // to be overridden in subclass if needed
+    }
 
     isEnglish() {
       return this.langCode === "en";
