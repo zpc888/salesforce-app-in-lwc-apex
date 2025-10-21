@@ -115,6 +115,23 @@ export function toNum(c) {
   return 0;
 }
 
+export function moveArrayItem(arr, fromIndex, toIndex) {
+  if (
+    !Array.isArray(arr) ||
+    fromIndex < 0 ||
+    fromIndex >= arr.length ||
+    toIndex < 0 ||
+    toIndex >= arr.length ||
+    fromIndex === toIndex
+  ) {
+    return arr;
+  }
+  const newArr = [...arr];
+  const item = newArr.splice(fromIndex, 1)[0];
+  newArr.splice(toIndex, 0, item);
+  return newArr;
+}
+
 class MixinBuilder {
   constructor(superclass) {
     this.superclass = superclass;
