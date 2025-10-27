@@ -1,0 +1,19 @@
+@startuml
+
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "Product_Catalogue_Config__mdt" as prodCatMdt {
+  *Catalogue_Level : Picklist
+  *Catalogue_Code: Text(64)
+  *Display_Order: Number(4, 0)
+  --
+  RootLevel | DepositLevel
+  Catalogue_Code: Unique Indexed
+}
+
+
+@enduml

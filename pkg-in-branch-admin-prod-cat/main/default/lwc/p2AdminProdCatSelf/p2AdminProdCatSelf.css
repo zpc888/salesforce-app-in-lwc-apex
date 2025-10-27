@@ -6,3 +6,12 @@
     gap: 1rem;
     width: 100%;
 }
+
+.p-dnd-dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+.p-dnd-drag-over {
+    background-color: lightblue;
+}
