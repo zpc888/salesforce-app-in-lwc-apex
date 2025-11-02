@@ -148,4 +148,28 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
       }
     }
   }
+
+  async handleCancel() {
+    const newOrders = new Map();
+    this.prodCatIdList.forEach((catId, index) => {
+      const oldOrder = this.originProdCatOrders.get(catId);
+      if (oldOrder !== index + 1) {
+        newOrders.set(catId, index + 1);
+      }
+    });
+    if (newOrders.size === 0) {
+      return; // No changes to revert
+    }
+
+    // based on originProdCatOrders, reset prodCatIdList and prodCatObjects
+    this.prodCatIdList = [];
+    this.prodCatObjects = [];
+    for (const [catalogueType, displayOrder] of this.originProdCatOrders) {
+      this.prodCatIdList[displayOrder - 1] = catalogueType;
+      this.prodCatObjects[displayOrder - 1] = {
+        id: catalogueType,
+        label: this.i18n[catalogueType]
+      };
+    }
+  }
 }

@@ -11,7 +11,8 @@ export const en = {
   btnMoveDown: "Move down",
   btnEdit: "Edit",
 
-  save: "Save"
+  save: "Save",
+  cancel: "Cancel"
 };
 
 export const fr = {
@@ -27,5 +28,6 @@ export const fr = {
   btnMoveDown: "Déplacer vers le bas",
   btnEdit: "Éditer",
 
-  save: "Enregistrer"
+  save: "Enregistrer",
+  cancel: "Annuler"
 };

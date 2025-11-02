@@ -25,7 +25,7 @@
 }
 
 .p-content-bottom {
-    background-color: var(--p-color-white);
+    background-color: var(--p-color-section-light);
     border-radius: 0.25rem; /* 4px */
     padding: 1rem 0.5rem; /* 16px 8px */
 }
