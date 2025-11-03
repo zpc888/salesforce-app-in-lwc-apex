@@ -48,8 +48,14 @@
             </c-p2-co-section>
         </div>
         <div slot="contentBottom" class="p2-content-bottom">
-            <button class="p-font-body-regular p-btn-secondary" onclick={handleCancel}>{i18n.cancel}</button>
-            <button class="p-font-body-regular p-btn-primary" onclick={handleSaveNewOrders}>{i18n.save}</button>
+            <template lwc:if={orderChanged}>
+                <button class="p-font-body-regular p-btn-secondary" onclick={handleCancel}>{i18n.cancel}</button>
+                <button class="p-font-body-regular p-btn-primary" onclick={handleSaveNewOrders}>{i18n.save}</button>
+            </template>
+            <template lwc:else>
+                <button class="p-font-body-regular p-btn-secondary" onclick={handleCancel}>{i18n.cancel}</button>
+                <button class="p-font-body-regular p-btn-primary" disabled onclick={handleSaveNewOrders}>{i18n.save}</button>
+            </template>
         </div>
     </c-p2-layout-content>
 </template>

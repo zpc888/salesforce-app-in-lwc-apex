@@ -19,6 +19,8 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
   prodCatIdList = [];
   prodCatObjects = [];
 
+  orderChanged = false;
+
   enrichedFr = deepMerge(fr, en);
 
   connectedCallback() {
@@ -36,6 +38,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
           });
         }
         this.prodCatObjects = [...this.prodCatObjects];
+        this.orderChanged = false;
       })
       .catch((error) => {
         console.error("Error fetching product catalogues:", error);
@@ -66,10 +69,16 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     const newIndex = index + offset;
     console.log(`drag and drop 0: Reorder from ${index} to ${newIndex}`);
     const newArr = moveArrayItem(this.prodCatObjects, index, newIndex);
+    this._onNewProdCatObjects(newArr);
+  }
+
+  _onNewProdCatObjects(newArr) {
     if (newArr !== this.prodCatObjects) {
       this.prodCatObjects = newArr;
       this.prodCatIdList = this.prodCatObjects.map((obj) => obj.id);
-    }
+
+      this.orderChanged = this._newOrderMap().size > 0;
+    } // else no change for this action
   }
 
   langCodeChanged(newCode) {
@@ -110,10 +119,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     );
     console.log(`dnd - handleDragDrop: from ${fromIndex} to ${toIndex}`);
     const newArr = moveArrayItem(this.prodCatObjects, fromIndex, toIndex);
-    if (newArr !== this.prodCatObjects) {
-      this.prodCatObjects = newArr;
-      this.prodCatIdList = this.prodCatObjects.map((obj) => obj.id);
-    }
+    this._onNewProdCatObjects(newArr);
   }
 
   handleDragEnd(event) {
@@ -123,13 +129,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
   }
 
   async handleSaveNewOrders() {
-    const newOrders = new Map();
-    this.prodCatIdList.forEach((catId, index) => {
-      const oldOrder = this.originProdCatOrders.get(catId);
-      if (oldOrder !== index + 1) {
-        newOrders.set(catId, index + 1);
-      }
-    });
+    const newOrders = this._newOrderMap();
     console.log(
       "ZPC-Save: Updating product catalogue orders:",
       Object.fromEntries(newOrders)
@@ -139,6 +139,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
         await updateRootLevelProductCatalogueOrders({
           newOrders: Object.fromEntries(newOrders)
         });
+        this.orderChanged = false;
         console.log("ZPC-Save: Product catalogue orders updated successfully");
       } catch (error) {
         console.error(
@@ -149,7 +150,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     }
   }
 
-  async handleCancel() {
+  _newOrderMap() {
     const newOrders = new Map();
     this.prodCatIdList.forEach((catId, index) => {
       const oldOrder = this.originProdCatOrders.get(catId);
@@ -157,6 +158,11 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
         newOrders.set(catId, index + 1);
       }
     });
+    return newOrders;
+  }
+
+  async handleCancel() {
+    const newOrders = this._newOrderMap();
     if (newOrders.size === 0) {
       return; // No changes to revert
     }
@@ -171,5 +177,6 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
         label: this.i18n[catalogueType]
       };
     }
+    this.orderChanged = false;
   }
 }

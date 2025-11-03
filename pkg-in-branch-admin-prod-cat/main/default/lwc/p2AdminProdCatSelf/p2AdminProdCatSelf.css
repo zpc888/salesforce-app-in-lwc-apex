@@ -38,6 +38,12 @@
     border: none;
 }
 
+.p-btn-primary[disabled] {
+    background-color: var(--p-color-grey-mid);
+    color: var(--p-color-white);
+    border: none;
+}
+
 .p-btn-secondary {
     background-color: var(--p-color-white);
     color: var(--p-color-grey-dark);
