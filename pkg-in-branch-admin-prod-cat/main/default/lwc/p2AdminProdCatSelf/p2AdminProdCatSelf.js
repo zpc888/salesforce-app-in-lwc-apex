@@ -3,6 +3,9 @@ import { MixinLangAware } from "c/p0WidgetMixin";
 import { mix, deepMerge, moveArrayItem } from "c/p0Funcs";
 import getRootLevelProductCatalogues from "@salesforce/apex/PbProductCatalogueAdminController.getRootLevelProductCatalogues";
 import updateRootLevelProductCatalogueOrders from "@salesforce/apex/PbProductCatalogueAdminController.updateRootLevelProductCatalogueOrders";
+
+import P2ConfirmDialog from "c/p2ConfirmDialog";
+
 import { en, fr } from "./p2AdminProdCatSelf-i18n";
 
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
@@ -165,6 +168,18 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     const newOrders = this._newOrderMap();
     if (newOrders.size === 0) {
       return; // No changes to revert
+    }
+
+    const result = await P2ConfirmDialog.open({
+      label: this.i18n.dialog.label,
+      dialogTitle: this.i18n.dialog.title,
+      dialogMessage: this.i18n.dialog.message,
+      confirmButton: this.i18n.dialog.confirmButton,
+      cancelButton: this.i18n.dialog.cancelButton,
+      ariaLabelForCloseIcon: this.i18n.dialog.ariaLabelForCloseIcon
+    });
+    if (result !== "confirm") {
+      return;
     }
 
     // based on originProdCatOrders, reset prodCatIdList and prodCatObjects

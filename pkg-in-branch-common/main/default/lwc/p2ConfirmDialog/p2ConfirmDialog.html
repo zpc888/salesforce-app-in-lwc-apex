@@ -1,0 +1,25 @@
+<template>
+   <div class="p2-modal">
+        <div class="p2-modal-header">
+            <div class="p2-tab-placeholder" tabindex="-1"></div>
+            <button onclick={handleCancel} aria-label={ariaLabelForCloseIcon}> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> 
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16 0.931966L15.068 0L8 7.06803L0.931885 0L0 0.931966L7.06803 8L0 15.068L0.931885 16L8 8.93197L15.068 16L16 15.068L8.93197 8L16 0.931966Z" fill="#C41F3E"/> 
+                </svg> 
+            </button> 
+        </div>
+        <div class="p2-modal-body">
+            <img src={dialogImage} alt="" />
+            <h1 class="p-font-h1-title p2-modal-body-title">
+                {dialogTitle}
+            </h1>
+            <div class="p-font-body-regular p2-modal-body-content">
+                {dialogMessage}
+            </div>
+       </div>
+       <div class="p2-modal-footer">
+            <button class="p2-button p2-button-secondary" onclick={handleCancel}>{cancelButton}</button>
+            <button class="p2-button p2-button-primary" onclick={handleConfirm}>{confirmButton}</button>
+        </div>
+   </div>
+</template>

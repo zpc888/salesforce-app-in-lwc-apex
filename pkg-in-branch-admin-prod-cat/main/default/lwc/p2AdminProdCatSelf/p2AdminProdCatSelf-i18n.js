@@ -12,7 +12,17 @@ export const en = {
   btnEdit: "Edit",
 
   save: "Save",
-  cancel: "Cancel"
+  cancel: "Cancel",
+
+  dialog: {
+    label: "Confirm Cancel",
+    title: "Discard Changes?",
+    message:
+      "You have unsaved changes to the product catalogue order. Are you sure you want to discard these changes?",
+    confirmButton: "Yes",
+    cancelButton: "No",
+    ariaLabelForCloseIcon: "Close dialog"
+  }
 };
 
 export const fr = {
@@ -29,5 +39,15 @@ export const fr = {
   btnEdit: "Éditer",
 
   save: "Enregistrer",
-  cancel: "Annuler"
+  cancel: "Annuler",
+
+  dialog: {
+    label: "Confirmer l'annulation",
+    title: "Abandonner les modifications ?",
+    message:
+      "Vous avez des modifications non enregistrées dans l'ordre du catalogue de produits. Êtes-vous sûr de vouloir abandonner ces modifications ?",
+    confirmButton: "Oui",
+    cancelButton: "Non",
+    ariaLabelForCloseIcon: "Fermer la boîte de dialogue"
+  }
 };
