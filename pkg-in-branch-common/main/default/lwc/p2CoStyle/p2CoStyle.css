@@ -33,3 +33,27 @@ having/having not content for uitlsCollapsed
         border: none;
     }
 }
+
+.p-btn-primary {
+    background-color: var(--p-color-grey-dark);
+    color: var(--p-color-white);
+    border: none;
+}
+
+.p-btn-primary[disabled] {
+    background-color: var(--p-color-grey-mid);
+    color: var(--p-color-white);
+    border: none;
+}
+
+.p-btn-secondary {
+    background-color: var(--p-color-white);
+    color: var(--p-color-grey-dark);
+    border: none;
+}
+
+.p-btn {
+    padding: 0.25rem 0.625rem;
+    min-width: 5rem;
+    border-radius: 1.25rem;
+}

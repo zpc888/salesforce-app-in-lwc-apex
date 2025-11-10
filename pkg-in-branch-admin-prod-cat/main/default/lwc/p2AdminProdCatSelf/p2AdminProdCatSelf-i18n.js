@@ -16,11 +16,12 @@ export const en = {
 
   dialog: {
     label: "Confirm Cancel",
+    header: "Discard Changes?",
     title: "Discard Changes?",
     message:
       "You have unsaved changes to the product catalogue order. Are you sure you want to discard these changes?",
-    confirmButton: "Yes",
-    cancelButton: "No",
+    confirmButton: "Discard",
+    cancelButton: "Cancel",
     ariaLabelForCloseIcon: "Close dialog"
   }
 };
@@ -43,11 +44,12 @@ export const fr = {
 
   dialog: {
     label: "Confirmer l'annulation",
-    title: "Abandonner les modifications ?",
+    header: "Abandonner les modifications?",
+    title: "Abandonner les modifications?",
     message:
       "Vous avez des modifications non enregistrées dans l'ordre du catalogue de produits. Êtes-vous sûr de vouloir abandonner ces modifications ?",
-    confirmButton: "Oui",
-    cancelButton: "Non",
+    confirmButton: "Abandonner",
+    cancelButton: "Annuler",
     ariaLabelForCloseIcon: "Fermer la boîte de dialogue"
   }
 };

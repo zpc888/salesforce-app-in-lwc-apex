@@ -142,6 +142,9 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
         await updateRootLevelProductCatalogueOrders({
           newOrders: Object.fromEntries(newOrders)
         });
+        this.prodCatIdList.forEach((catId, index) => {
+          this.originProdCatOrders.set(catId, index + 1); // sync the origin orders
+        });
         this.orderChanged = false;
         console.log("ZPC-Save: Product catalogue orders updated successfully");
       } catch (error) {
@@ -155,12 +158,14 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
 
   _newOrderMap() {
     const newOrders = new Map();
+    console.log("ZPC-prodCatIdList:", this.prodCatIdList);
     this.prodCatIdList.forEach((catId, index) => {
       const oldOrder = this.originProdCatOrders.get(catId);
       if (oldOrder !== index + 1) {
         newOrders.set(catId, index + 1);
       }
     });
+    console.log("ZPC-newOrders:", newOrders);
     return newOrders;
   }
 
@@ -172,6 +177,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
 
     const result = await P2ConfirmDialog.open({
       label: this.i18n.dialog.label,
+      dialogHeader: this.i18n.dialog.header,
       dialogTitle: this.i18n.dialog.title,
       dialogMessage: this.i18n.dialog.message,
       confirmButton: this.i18n.dialog.confirmButton,
@@ -184,14 +190,15 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
 
     // based on originProdCatOrders, reset prodCatIdList and prodCatObjects
     this.prodCatIdList = [];
-    this.prodCatObjects = [];
+    const oldOrders = [];
     for (const [catalogueType, displayOrder] of this.originProdCatOrders) {
       this.prodCatIdList[displayOrder - 1] = catalogueType;
-      this.prodCatObjects[displayOrder - 1] = {
+      oldOrders[displayOrder - 1] = {
         id: catalogueType,
         label: this.i18n[catalogueType]
       };
     }
+    this.prodCatObjects = oldOrders;
     this.orderChanged = false;
   }
 }
