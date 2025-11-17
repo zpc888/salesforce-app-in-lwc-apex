@@ -1,0 +1,10 @@
+{
+  "profileName": "System Administrator",
+  "permsets": [],
+  "generatePassword": true,
+  "FirstName": "%fname%",
+  "LastName": "%lname%",
+  "Email": "%email%",
+  "Username": "%uname%",
+  "LocaleSidKey": "en_US"
+}
