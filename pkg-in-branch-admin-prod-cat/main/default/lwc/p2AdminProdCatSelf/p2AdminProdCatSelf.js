@@ -1,4 +1,4 @@
-import { LightningElement } from "lwc";
+import { api, LightningElement } from "lwc";
 import { MixinLangAware } from "c/p0WidgetMixin";
 import { mix, deepMerge, moveArrayItem } from "c/p0Funcs";
 import getRootLevelProductCatalogues from "@salesforce/apex/PbProductCatalogueAdminController.getRootLevelProductCatalogues";
@@ -170,9 +170,19 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
   }
 
   async handleCancel() {
+    await this.hasNoChangesOrDiscardChanges();
+  }
+
+  @api
+  async hasNoChangesOrDiscardChanges() {
+    console.log("ZPC Debug: hasNoChangesOrDiscardChanges called");
     const newOrders = this._newOrderMap();
+    console.log(
+      "ZPC Debug: hasNoChangesOrDiscardChanges newOrders",
+      newOrders.size
+    );
     if (newOrders.size === 0) {
-      return; // No changes to revert
+      return true; // No changes to revert
     }
 
     const result = await P2ConfirmDialog.open({
@@ -185,7 +195,7 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
       ariaLabelForCloseIcon: this.i18n.dialog.ariaLabelForCloseIcon
     });
     if (result !== "confirm") {
-      return;
+      return false; // User doesn't confirm to discard the changes
     }
 
     // based on originProdCatOrders, reset prodCatIdList and prodCatObjects
@@ -200,5 +210,6 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     }
     this.prodCatObjects = oldOrders;
     this.orderChanged = false;
+    return true;
   }
 }

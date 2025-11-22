@@ -15,6 +15,7 @@
         <c-p2-layout-main-menu
             slot="mainMenu"
             lang-code = {langCode}
+            onnavigate={handleMainMenuNavigate}
             menu-items={mainMenuItems}
         ></c-p2-layout-main-menu>
         <c-p2-layout-sub-menu
@@ -28,13 +29,14 @@
             <c-p2-layout-tree-menu
                 selected-key={treeMenuSelectedItem}
                 menu-items = {treeMenuItems}
-                onmenuselect={handleMenuSelect}
+                onmenuselect={handleTreeMenuSelect}
                 ></c-p2-layout-tree-menu>
         </c-p2-layout-sub-menu>
 
 
         <template lwc:if={isAdminProdCat}>
             <c-p2-admin-prod-cat-self
+                lwc:ref="refSelf"
                 lang-code = {langCode}
             ></c-p2-admin-prod-cat-self>
         </template>

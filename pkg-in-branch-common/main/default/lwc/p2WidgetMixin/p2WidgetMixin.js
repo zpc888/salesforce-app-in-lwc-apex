@@ -76,10 +76,48 @@ export const MixinPageBase = (Base) =>
         });
     }
 
-    handleAppSwitchEvent(event) {
+    async hasChangesToSave() {
+      // has change and don't want to discard
+      return false;
+    }
+
+    async handleTreeMenuSelect(event) {
+      // each MixinPageBase derived class must have treeMnuSelectedItem property
+      if (this.treeMenuSelectedItem === event.detail.key) {
+        return;
+      }
+      if (await this.hasChangesToSave()) {
+        console.log(
+          "Unsaved changes detected, aborting tree-menu switch:",
+          event.detail.key
+        );
+        return;
+      }
+      this.treeMenuSelectedItem = event.detail.key;
+    }
+
+    async handleMainMenuNavigate(event) {
+      const { leftNav } = event.detail;
+      console.log("main menu navigate to ", leftNav);
+      if (await this.hasChangesToSave()) {
+        console.log(
+          "Unsaved changes detected, aborting main menu swtich:",
+          leftNav
+        );
+        return;
+      }
+      this.navigateTo(leftNav);
+    }
+
+    async handleAppSwitchEvent(event) {
       const { url, appName } = event.detail;
       console.log("app switch event handling...", url, appName);
       if (url) {
+        console.log("Navigating to ", url, " with appName ", appName);
+        if (await this.hasChangesToSave()) {
+          console.log("Unsaved changes detected, aborting app switch:", url);
+          return;
+        }
         this[NavigationMixin.Navigate]({
           type: "standard__component",
           attributes: {

@@ -42,3 +42,4 @@ cat bin/config/user-def-template.json | \
   > /tmp/user-def.json
 
 echo sf org create user --target-org $org --definition-file /tmp/user-def.json
+sf org create user --target-org $org --definition-file /tmp/user-def.json

@@ -99,7 +99,17 @@ export default class P2AdminProdCat extends mix(LightningElement).with(
     return ret;
   }
 
-  handleMenuSelect(event) {
-    this.treeMenuSelectedItem = event.detail.key;
+  async hasChangesToSave() {
+    if (this.isAdminProdCat) {
+      const noChangesOrDiscardChanges =
+        await this.refs.refSelf.hasNoChangesOrDiscardChanges();
+      return !noChangesOrDiscardChanges;
+    } else if (this.isAdminDeposit) {
+      return false;
+    } else if (this.isAdminLending) {
+      return false;
+    } else {
+      return false;
+    }
   }
 }
