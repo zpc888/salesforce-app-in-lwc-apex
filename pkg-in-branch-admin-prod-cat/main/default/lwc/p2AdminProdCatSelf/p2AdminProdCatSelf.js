@@ -1,5 +1,6 @@
 import { api, LightningElement } from "lwc";
 import { MixinLangAware } from "c/p0WidgetMixin";
+import { MixinMainBodyBase } from "c/p2WidgetMixin";
 import { mix, deepMerge, moveArrayItem } from "c/p0Funcs";
 import getRootLevelProductCatalogues from "@salesforce/apex/PbProductCatalogueAdminController.getRootLevelProductCatalogues";
 import updateRootLevelProductCatalogueOrders from "@salesforce/apex/PbProductCatalogueAdminController.updateRootLevelProductCatalogueOrders";
@@ -11,7 +12,8 @@ import { en, fr } from "./p2AdminProdCatSelf-i18n";
 import IMAGES_URL from "@salesforce/resourceUrl/p2Images";
 
 export default class P2AdminProdCatSelf extends mix(LightningElement).with(
-  MixinLangAware
+  MixinLangAware,
+  MixinMainBodyBase
 ) {
   _prodCatAdmImg = IMAGES_URL + "/placeholder-30.svg";
   moveUpIcon = IMAGES_URL + "/action-move-up.svg";

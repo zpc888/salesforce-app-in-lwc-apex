@@ -1,5 +1,5 @@
 import { loadStyle } from "lightning/platformResourceLoader";
-import { wire, track } from "lwc";
+import { wire, track, api } from "lwc";
 import { NavigationMixin, CurrentPageReference } from "lightning/navigation";
 import { getRecord, updateRecord } from "lightning/uiRecordApi";
 
@@ -163,5 +163,15 @@ export const MixinPageBase = (Base) =>
         this.error = extractErrorMessage(error);
         console.error("Error loading user data:", extractErrorMessage(error));
       }
+    }
+  };
+
+export const MixinMainBodyBase = (Base) =>
+  class extends Base {
+    @api
+    async hasNoChangesOrDiscardChanges() {
+      // to be overridden in subclass if needed
+      // it should pop up confirm dialog if there are unsaved changes
+      return true;
     }
   };

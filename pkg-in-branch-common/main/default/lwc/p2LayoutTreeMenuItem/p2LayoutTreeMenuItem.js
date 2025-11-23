@@ -139,7 +139,9 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
         ? this.item.itemImgSelected
         : this.item.itemImg;
       if (this.isLevel2 && isEmpty(ret)) {
-        return IMAGES_URL + "/menu-leaf-icon.svg";
+        return this.isSelectedOrAncestor
+          ? IMAGES_URL + "/menu-leaf-selected-icon.svg"
+          : IMAGES_URL + "/menu-leaf-icon.svg";
       } else {
         return ret;
       }
