@@ -13,8 +13,8 @@ export default class P2CoSection extends mix(LightningElement).with(
   @api sectionSubtitle;
   @api toggleState = "expanded"; // "expanded" or "collapsed" or "none" = not allowed
 
-  _toExpandedIconUrl = `${IMAGES_URL}/chevron-down.svg`;
-  _toCollapsedIconUrl = `${IMAGES_URL}/chevron-up.svg`;
+  _toExpandedIconUrl = `${IMAGES_URL}/chevron-up.svg`;
+  _toCollapsedIconUrl = `${IMAGES_URL}/chevron-down.svg`;
   sectionHeaderIcon = `${IMAGES_URL}/action-list.svg`;
 
   enrichedFr = deepMerge(fr, en);

@@ -10,11 +10,21 @@
             <div>
                 <slot name="boxHeaderActions"></slot>
             </div>
+            <div lwc:if={isToggleable}>
+                <button
+                    aria-controls="pBoxyBody pBoxFooter"
+                    aria-expanded={isExpanded}
+                    aria-label={toggleAriaLabel}
+                    onclick={handleToggle}
+                >
+                    <img src={toggleIcon} alt="" />
+                </button>                
+            </div>
         </div>
-        <div class="p-box-body">
+        <div class="p-box-body" id="pBoxBody" lwc:if={isExpanded}>
             <slot></slot>
         </div>
-        <div class="p-box-footer">
+        <div class="p-box-footer" id="pBoxFooter" lwc:if={isExpanded}>
             <slot name="boxFooter"></slot>
         </div>
     </div>

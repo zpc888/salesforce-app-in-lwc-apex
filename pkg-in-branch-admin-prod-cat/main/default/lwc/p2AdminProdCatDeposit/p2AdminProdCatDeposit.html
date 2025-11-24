@@ -3,14 +3,54 @@
         lang-code={langCode}
     >
         <div slot="contentTop" class="p2-content-top">
-            <h1>Deposit Product Setup</h1>
+            <h1 class="p-font-h1-title">{i18n.depositProductCat}</h1>
         </div>
         <div class="p2-content-main">
-            <div>Chequing</div>
-            <div>Saving</div>
+            <c-p2-co-section
+                    class="p2-section-instance"
+                    section-title={i18n.sectionTitle}
+                    section-subtitle={i18n.sectionSubtitle}
+                    lang-code={langCode}>
+                <div class="p2-section-actions">
+                    <button class="p-font-body-regular p-btn p-btn-secondary" onclick={handleAddDepositProduct}>
+                        {i18n.btnAddDepositProduct}
+                    </button>
+                </div>
+                <template for:each={depositProdCatObjects} for:item="prodCat">
+                    <c-p2-co-box
+                            key={prodCat.id}
+                            data-prodcat-id={prodCat.id}
+                            class="p-dnd"
+                            box-title={prodCat.label}
+                            toggle-state="expanded"
+                            lang-code={langCode}>
+                        <div slot="boxHeaderActions" class="p2-button-group-h">
+                            <c-p2-co-content-button
+                                    btn-label={i18n.btnMoveUp}
+                                    img-src={moveUpIcon}
+                                    data-prodcat-id={prodCat.id}
+                                    onclick={handleMoveUpClick}>
+                            </c-p2-co-content-button>
+                            <c-p2-co-content-button
+                                    btn-label={i18n.btnMoveDown}
+                                    img-src={moveDownIcon}
+                                    data-prodcat-id={prodCat.id}
+                                    onclick={handleMoveDownClick}>
+                            </c-p2-co-content-button>
+                        </div>
+                    </c-p2-co-box>
+                </template>
+            </c-p2-co-section>
         </div>
         <div slot="contentBottom" class="p2-content-bottom">
-            <h1>Deposit Actions List</h1>
+            <template lwc:if={anyChanges}>
+                <button class="p-font-body-regular p-btn p-btn-secondary" onclick={handleCancel}>{i18n.cancel}</button>
+                <button class="p-font-body-regular p-btn p-btn-primary" onclick={handleSaveNewOrders}>{i18n.save}</button>
+            </template>
+            <template lwc:else>
+                <button class="p-font-body-regular p-btn p-btn-secondary" onclick={handleCancel}>{i18n.cancel}</button>
+                <button class="p-font-body-regular p-btn p-btn-primary" disabled onclick={handleSaveNewOrders}>{i18n.save}</button>
+            </template>
         </div>
     </c-p2-layout-content>    
 </template>
