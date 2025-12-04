@@ -135,14 +135,23 @@ export default class P2LayoutTreeMenuItem extends LightningElement {
 
   get itemImg() {
     if (this.item) {
-      const ret = this.isSelectedOrAncestor
-        ? this.item.itemImgSelected
-        : this.item.itemImg;
-      if (this.isLevel2 && isEmpty(ret)) {
-        return this.isSelectedOrAncestor
-          ? IMAGES_URL + "/menu-leaf-selected-icon.svg"
-          : IMAGES_URL + "/menu-leaf-icon.svg";
+      let ret;
+      if (this.isSelected) {
+        ret = this.item.itemImgSelected;
+      } else if (this.isAncestorOfSelection) {
+        ret = this.item.itemImgEntangled ?? this.item.itemImgSelected;
       } else {
+        ret = this.item.itemImg;
+      }
+      if (this.isLevel2 && isEmpty(ret)) {
+        if (this.isSelected) {
+          ret = IMAGES_URL + "/menu-leaf-selected-icon.svg";
+        } else if (this.isAncestorOfSelection) {
+          // ret = IMAGES_URL + "/menu-leaf-entangled-icon.svg";
+          ret = IMAGES_URL + "/menu-leaf-selected-icon.svg";
+        } else {
+          ret = IMAGES_URL + "/menu-leaf-icon.svg";
+        }
         return ret;
       }
     } else {

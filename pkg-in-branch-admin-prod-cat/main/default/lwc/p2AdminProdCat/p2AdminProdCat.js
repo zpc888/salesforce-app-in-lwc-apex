@@ -76,6 +76,7 @@ export default class P2AdminProdCat extends mix(LightningElement).with(
             itemText: this.i18n.treeMenuProdCat,
             itemType: "prodCat",
             itemImg: IMAGES_URL + "/object-structure.svg",
+            itemImgEntangled: IMAGES_URL + "/object-structure.svg",
             itemImgSelected: IMAGES_URL + "/object-structure.svg",
             kids: [
               {
