@@ -214,4 +214,13 @@ export default class P2AdminProdCatSelf extends mix(LightningElement).with(
     this.orderChanged = false;
     return true;
   }
+
+  @api
+  hasPendingChanges() {
+    console.log(
+      "ZPC Debug: hasPendingChanges in prodCatSelf called:",
+      this.orderChanged
+    );
+    return this.orderChanged;
+  }
 }

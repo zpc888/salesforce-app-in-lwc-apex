@@ -30,12 +30,34 @@ export const MixinPageBase = (Base) =>
 
     accountId = null;
 
+    _beforeUnloadHandler = null;
+
     @track layoutAppObject = {
       businessName: ""
     };
 
+    disconnectedCallback() {
+      if (this._beforeUnloadHandler) {
+        window.removeEventListener("beforeunload", this._beforeUnloadHandler);
+      }
+    }
+
     connectedCallback() {
       Promise.all([loadStyle(this, p2GlobalStyle)]);
+      this._beforeUnloadHandler = (event) => {
+        if (this.hasPendingChanges()) {
+          event.preventDefault();
+          event.returnValue = "";
+          // done by browser already
+          // setTimeout(() => {
+          //   window.alert(
+          //     "This page has unsaved changes. Please save/discard before leaving."
+          //   );
+          // }, 0);
+          return "";
+        }
+      };
+      window.addEventListener("beforeunload", this._beforeUnloadHandler);
       this.doConnectedCallback();
     }
 
@@ -76,8 +98,14 @@ export const MixinPageBase = (Base) =>
         });
     }
 
+    // negative to have no changes, or have changes but discard them by acting on popup window
     async hasChangesToSave() {
       // has change and don't want to discard
+      return false;
+    }
+
+    hasPendingChanges() {
+      console.log("ZPC Debug: hasPendingChanges in PageBase called");
       return false;
     }
 
@@ -173,5 +201,11 @@ export const MixinMainBodyBase = (Base) =>
       // to be overridden in subclass if needed
       // it should pop up confirm dialog if there are unsaved changes
       return true;
+    }
+
+    @api
+    hasPendingChanges() {
+      console.log("ZPC Debug: hasPendingChanges in MixinMainBodyBase called");
+      return false;
     }
   };

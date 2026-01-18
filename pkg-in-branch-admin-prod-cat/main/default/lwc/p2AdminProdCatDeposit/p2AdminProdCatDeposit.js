@@ -72,4 +72,6 @@ export default class P2AdminProdCatDeposit extends mix(LightningElement).with(
         console.error("Error fetching product catalogues:", error);
       });
   }
+
+  async handleAddDepositProduct() {}
 }

@@ -113,4 +113,18 @@ export default class P2AdminProdCat extends mix(LightningElement).with(
       return false;
     }
   }
+
+  hasPendingChanges() {
+    if (this.isAdminProdCat) {
+      const ret = this.refs.refSelf.hasPendingChanges();
+      console.log("ZPC-prodCat hasPendingChanges:", ret);
+      return ret;
+    } else if (this.isAdminDeposit) {
+      return false;
+    } else if (this.isAdminLending) {
+      return false;
+    } else {
+      return false;
+    }
+  }
 }
