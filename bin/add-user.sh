@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-fname=Rick
-lname=Yao
-email=rainiceyao@gmail.com
+fname=David
+lname=Smith
+email=david.smith@gmail.com
 org=zpc-$(date +%Y-%m-%d)
 default_org=true
 
